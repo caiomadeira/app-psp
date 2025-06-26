@@ -8,11 +8,11 @@ add_executable(${PROJECT_NAME}
     include/audio.c
 )
 
-# include(FindPkgConfig)
-# pkg_search_module(SDL3 REQUIRED sdl3)
-# if(NOT PSP)
-# 	pkg_search_module(GL REQUIRED gl)
-# endif()
+include(FindPkgConfig)
+pkg_search_module(SDL3 REQUIRED sdl3)
+if(NOT PSP)
+	pkg_search_module(GL REQUIRED gl)
+endif()
 
 target_include_directories(${PROJECT_NAME} PRIVATE 
     ${SDL3_INCLUDE_DIRS}
@@ -21,9 +21,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     $ENV{PSPDEV}/psp/include
 )
 
-target_link_directories(${PROJECT_NAME} PRIVATE
-    $ENV{PSPDEV}/psp/lib
-)
 target_link_libraries(${PROJECT_NAME} PRIVATE 
     ${SDL3_LIBRARIES}
     ${SDL3_image_LIBRARIES}
@@ -55,6 +52,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     pspgu 
     pspdisplay 
     pspdebug
+    pspge
+    pspvram
     #pspgles # - PSPDEV/LIB não tem libpspgles.a
     m
 )
