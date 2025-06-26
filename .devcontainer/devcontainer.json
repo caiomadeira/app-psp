@@ -1,0 +1,34 @@
+{
+    "name": "PSP Development",
+
+    // Diz ao VS Code para usar a imagem oficial do pspdev que você já tem.
+    "image": "pspdev/pspdev:latest",
+
+    // Mantém o container rodando mesmo se a janela do VS Code for fechada.
+    "runArgs": ["--rm"],
+
+    // Mapeia a pasta do seu projeto (onde este arquivo está) para /home/dev/projects dentro do container.
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/dev/projects,type=bind,consistency=cached",
+
+    // Diz ao VS Code qual pasta abrir uma vez que ele estiver dentro do container.
+    "workspaceFolder": "/home/dev/projects",
+
+    // Executa comandos após o container ser criado. Útil para instalar coisas. (Opcional)
+    // "postCreateCommand": "sudo apt-get update && sudo apt-get install -y git",
+
+    // Configurações específicas do VS Code para este ambiente.
+    "customizations": {
+        "vscode": {
+            // Instala extensões úteis dentro do ambiente Dev Container.
+            "extensions": [
+                "ms-vscode.cpptools", // IntelliSense para C/C++
+                "ms-vscode.cmake-tools", // Ferramentas do CMake
+                "twxs.cmake" // Syntax highlighting para CMake
+            ]
+        }
+    },
+
+    // Diz ao VS Code para rodar como seu usuário local, não como root.
+    // Isso previne problemas de permissão de arquivo.
+    "remoteUser": "dev"
+}

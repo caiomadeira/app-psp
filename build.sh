@@ -20,7 +20,7 @@ has_build_dir() {
 }
 
 run_build() {
-    if ["$(pwd)" == "$(realpath $BUILD_DIR)"]; then
+    if [ "$(pwd)" == "$(realpath $BUILD_DIR)" ]; then
         echo "compiling..."
         psp-cmake ..
         make
