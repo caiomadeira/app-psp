@@ -8,6 +8,7 @@ add_executable(${PROJECT_NAME}
     include/player.c
     include/audio.c
     include/common.c
+    include/logic.c
 )
 
 set(ASSETS_DIR ${CMAKE_SOURCE_DIR}/assets)

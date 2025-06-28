@@ -214,6 +214,30 @@ include/graphic.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.c.s
 .PHONY : include/graphic.c.s
 
+include/logic.obj: include/logic.c.obj
+.PHONY : include/logic.obj
+
+# target to build an object file
+include/logic.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/logic.c.obj
+.PHONY : include/logic.c.obj
+
+include/logic.i: include/logic.c.i
+.PHONY : include/logic.i
+
+# target to preprocess a source file
+include/logic.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/logic.c.i
+.PHONY : include/logic.c.i
+
+include/logic.s: include/logic.c.s
+.PHONY : include/logic.s
+
+# target to generate assembly for a file
+include/logic.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/logic.c.s
+.PHONY : include/logic.c.s
+
 include/player.obj: include/player.c.obj
 .PHONY : include/player.obj
 
@@ -281,6 +305,9 @@ help:
 	@echo "... include/graphic.obj"
 	@echo "... include/graphic.i"
 	@echo "... include/graphic.s"
+	@echo "... include/logic.obj"
+	@echo "... include/logic.i"
+	@echo "... include/logic.s"
 	@echo "... include/player.obj"
 	@echo "... include/player.i"
 	@echo "... include/player.s"

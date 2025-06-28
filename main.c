@@ -7,6 +7,7 @@
 
 // COLORS SDL
 SDL_Color SDL_WHITE = { 255, 255, 255, 255 };
+SDL_Color SDL_PURPLE = { 192, 92, 255, 255 };
 
 typedef struct app {
 	SDL_Window *window;
@@ -18,6 +19,7 @@ typedef struct app {
     SDL_Renderer *renderer;
     TTF_Font *font;
     SceCtrlData prev_pad;
+    Grid* grid;
 } app_t;
 
 /*
@@ -68,14 +70,11 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         return SDL_APP_FAILURE;
     }
 
-    a->font = TTF_OpenFont(ROAST_CHICKEN_TTF, 30);
+    a->font = TTF_OpenFont(ROAST_CHICKEN_TTF, 20);
     if (a->font == NULL) {
         printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
-
-	// ativa o v-sync
-	//SDL_GL_SetSwapInterval(1);
 
     // Inicializando o controle nativo
     sceCtrlSetSamplingCycle(0);
@@ -104,6 +103,18 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         return SDL_APP_FAILURE;
     }
 
+    int grid_pos_x = 5;
+    int grid_pos_y = 5;
+    int grid_width = WINDOW_WIDTH / 2;
+    int grid_height = WINDOW_HEIGHT - 15;
+    int padding = 2;
+    GridArea* gridArea = newGridArea(grid_pos_x, grid_pos_y, grid_width, grid_height, padding);
+    a->grid = newGrid(15, 15, gridArea);
+    if (a->grid == NULL) {
+        printDebug(SDL_GetError(), 5000);
+        return SDL_APP_FAILURE;
+    }
+
 	*appstate = (void *)a;
 	return SDL_APP_CONTINUE;
 }
@@ -120,12 +131,6 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
     // --- LOGICA DE CONTROLES
     readButtonState(&a->pad, 1);
-    float analog_x = (a->pad.Lx - 128) / 128.0f;    // Normaliza o valor do analógico (0-255 -> -1.0 a 1.0)
-    float analog_y = (a->pad.Ly - 128) / 128.0f;
-    if (fabs(analog_x) < 0.2f) analog_x = 0.0f;    // "Zona morta" para evitar movimento com o analógico parado
-    if (fabs(analog_y) < 0.2f) analog_y = 0.0f;
-    a->player->x += analog_x * a->player->speed;    // Atualiza a posição do jogador
-    a->player->y -= analog_y * a->player->speed;
     if (a->pad.Buttons & PSP_CTRL_START)  return SDL_APP_SUCCESS;    // Se o botão START for pressionado, fecha o aplicativo
     
     
@@ -136,16 +141,18 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     // ----------------------------------------------------
     // --- LÓGICA DE RENDERIZAÇÃO ---
 
-    //SDL_Renderer *renderer = SDL_GetRenderer(a->window);
     SDL_SetRenderDrawColor(a->renderer, 0, 0, 0, 255);
     SDL_RenderClear(a->renderer);
 
     SDL_RenderTexture(a->renderer, a->background_texture, NULL, NULL);
 
     // Draw Text
-    drawTextWithFont("Hello PSP!", 50, 50, a->font, a->renderer, SDL_WHITE);
+    drawTextWithFont("Hello PSP!", 5, 5, a->font, a->renderer, SDL_WHITE);
     // Draw Rect
-    drawRect(50, 50, 50, 50, a->renderer, 192, 92, 255, 255);
+    // drawRect(30, 50, 30, 30, a->renderer, 255, 255, 255, 255, "filled");
+    // Draw Grid
+    drawGrid(a->grid, a->renderer);
+
     SDL_RenderPresent(a->renderer); // Mostra na tela tudo o que foi desenhado    
     return SDL_APP_CONTINUE;
 }
@@ -157,7 +164,6 @@ LÓGICA DE INTERAÇÃO COM EVENTOS SDL
 */
 SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 {
-    // A única coisa com que nos importamos aqui é se a SDL quer fechar o aplicativo
     if (event->type == SDL_EVENT_QUIT) {
         return SDL_APP_SUCCESS;
     }
@@ -168,8 +174,6 @@ void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
 	app_t *a = (app_t *)appstate;
 	SDL_DestroyWindow(a->window);
-	//SDL_GL_DestroyContext(a->context);
-    //cleanup_audio();
     cleanup_native_audio();
 	SDL_free(a);
 	SDL_Quit();

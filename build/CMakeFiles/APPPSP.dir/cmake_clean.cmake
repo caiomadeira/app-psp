@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/APPPSP.dir/include/common.c.obj.d"
   "CMakeFiles/APPPSP.dir/include/graphic.c.obj"
   "CMakeFiles/APPPSP.dir/include/graphic.c.obj.d"
+  "CMakeFiles/APPPSP.dir/include/logic.c.obj"
+  "CMakeFiles/APPPSP.dir/include/logic.c.obj.d"
   "CMakeFiles/APPPSP.dir/include/player.c.obj"
   "CMakeFiles/APPPSP.dir/include/player.c.obj.d"
   "CMakeFiles/APPPSP.dir/main.c.obj"

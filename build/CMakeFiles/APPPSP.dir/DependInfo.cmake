@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/caiomadeira/Desktop/app-psp/include/audio.c" "CMakeFiles/APPPSP.dir/include/audio.c.obj" "gcc" "CMakeFiles/APPPSP.dir/include/audio.c.obj.d"
   "/home/caiomadeira/Desktop/app-psp/include/common.c" "CMakeFiles/APPPSP.dir/include/common.c.obj" "gcc" "CMakeFiles/APPPSP.dir/include/common.c.obj.d"
   "/home/caiomadeira/Desktop/app-psp/include/graphic.c" "CMakeFiles/APPPSP.dir/include/graphic.c.obj" "gcc" "CMakeFiles/APPPSP.dir/include/graphic.c.obj.d"
+  "/home/caiomadeira/Desktop/app-psp/include/logic.c" "CMakeFiles/APPPSP.dir/include/logic.c.obj" "gcc" "CMakeFiles/APPPSP.dir/include/logic.c.obj.d"
   "/home/caiomadeira/Desktop/app-psp/include/player.c" "CMakeFiles/APPPSP.dir/include/player.c.obj" "gcc" "CMakeFiles/APPPSP.dir/include/player.c.obj.d"
   "/home/caiomadeira/Desktop/app-psp/main.c" "CMakeFiles/APPPSP.dir/main.c.obj" "gcc" "CMakeFiles/APPPSP.dir/main.c.obj.d"
   )

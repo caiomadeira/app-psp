@@ -83,12 +83,12 @@ clean: CMakeFiles/copy_assets.dir/clean
 CMakeFiles/APPPSP.dir/all: CMakeFiles/copy_assets.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target APPPSP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target APPPSP"
 .PHONY : CMakeFiles/APPPSP.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/APPPSP.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/APPPSP.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles 0
 .PHONY : CMakeFiles/APPPSP.dir/rule
