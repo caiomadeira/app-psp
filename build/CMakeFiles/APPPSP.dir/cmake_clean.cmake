@@ -1,19 +1,21 @@
 file(REMOVE_RECURSE
   "APPPSP"
   "APPPSP.pdb"
-  "CMakeFiles/APPPSP.dir/include/audio.c.obj"
-  "CMakeFiles/APPPSP.dir/include/audio.c.obj.d"
-  "CMakeFiles/APPPSP.dir/include/common.c.obj"
-  "CMakeFiles/APPPSP.dir/include/common.c.obj.d"
-  "CMakeFiles/APPPSP.dir/include/graphic.c.obj"
-  "CMakeFiles/APPPSP.dir/include/graphic.c.obj.d"
-  "CMakeFiles/APPPSP.dir/include/player.c.obj"
-  "CMakeFiles/APPPSP.dir/include/player.c.obj.d"
-  "CMakeFiles/APPPSP.dir/main.c.obj"
-  "CMakeFiles/APPPSP.dir/main.c.obj.d"
+  "CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj"
+  "CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj.d"
+  "CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj"
+  "CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj.d"
+  "CMakeFiles/APPPSP.dir/include/audio.cpp.obj"
+  "CMakeFiles/APPPSP.dir/include/audio.cpp.obj.d"
+  "CMakeFiles/APPPSP.dir/include/graphic.cpp.obj"
+  "CMakeFiles/APPPSP.dir/include/graphic.cpp.obj.d"
+  "CMakeFiles/APPPSP.dir/include/player.cpp.obj"
+  "CMakeFiles/APPPSP.dir/include/player.cpp.obj.d"
+  "CMakeFiles/APPPSP.dir/main.cpp.obj"
+  "CMakeFiles/APPPSP.dir/main.cpp.obj.d"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
+foreach(lang CXX)
   include(CMakeFiles/APPPSP.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

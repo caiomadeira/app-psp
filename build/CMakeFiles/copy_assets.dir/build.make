@@ -67,11 +67,8 @@ include CMakeFiles/copy_assets.dir/compiler_depend.make
 include CMakeFiles/copy_assets.dir/progress.make
 
 copy_assets: CMakeFiles/copy_assets.dir/build.make
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying audio files..."
 	/usr/bin/cmake -E copy_directory /home/caiomadeira/Desktop/app-psp/assets/audio /home/caiomadeira/Desktop/app-psp/build/audio
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying font files..."
 	/usr/bin/cmake -E copy_directory /home/caiomadeira/Desktop/app-psp/assets/font /home/caiomadeira/Desktop/app-psp/build/font
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Copying img files..."
 	/usr/bin/cmake -E copy_directory /home/caiomadeira/Desktop/app-psp/assets/img /home/caiomadeira/Desktop/app-psp/build/img
 .PHONY : copy_assets
 

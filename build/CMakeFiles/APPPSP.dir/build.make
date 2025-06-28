@@ -69,97 +69,118 @@ include CMakeFiles/APPPSP.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/APPPSP.dir/flags.make
 
-CMakeFiles/APPPSP.dir/main.c.obj: CMakeFiles/APPPSP.dir/flags.make
-CMakeFiles/APPPSP.dir/main.c.obj: /home/caiomadeira/Desktop/app-psp/main.c
-CMakeFiles/APPPSP.dir/main.c.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/APPPSP.dir/main.c.obj"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/main.c.obj -MF CMakeFiles/APPPSP.dir/main.c.obj.d -o CMakeFiles/APPPSP.dir/main.c.obj -c /home/caiomadeira/Desktop/app-psp/main.c
+CMakeFiles/APPPSP.dir/main.cpp.obj: CMakeFiles/APPPSP.dir/flags.make
+CMakeFiles/APPPSP.dir/main.cpp.obj: /home/caiomadeira/Desktop/app-psp/main.cpp
+CMakeFiles/APPPSP.dir/main.cpp.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/APPPSP.dir/main.cpp.obj"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/main.cpp.obj -MF CMakeFiles/APPPSP.dir/main.cpp.obj.d -o CMakeFiles/APPPSP.dir/main.cpp.obj -c /home/caiomadeira/Desktop/app-psp/main.cpp
 
-CMakeFiles/APPPSP.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/APPPSP.dir/main.c.i"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caiomadeira/Desktop/app-psp/main.c > CMakeFiles/APPPSP.dir/main.c.i
+CMakeFiles/APPPSP.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/APPPSP.dir/main.cpp.i"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caiomadeira/Desktop/app-psp/main.cpp > CMakeFiles/APPPSP.dir/main.cpp.i
 
-CMakeFiles/APPPSP.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/APPPSP.dir/main.c.s"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caiomadeira/Desktop/app-psp/main.c -o CMakeFiles/APPPSP.dir/main.c.s
+CMakeFiles/APPPSP.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/APPPSP.dir/main.cpp.s"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caiomadeira/Desktop/app-psp/main.cpp -o CMakeFiles/APPPSP.dir/main.cpp.s
 
-CMakeFiles/APPPSP.dir/include/graphic.c.obj: CMakeFiles/APPPSP.dir/flags.make
-CMakeFiles/APPPSP.dir/include/graphic.c.obj: /home/caiomadeira/Desktop/app-psp/include/graphic.c
-CMakeFiles/APPPSP.dir/include/graphic.c.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/APPPSP.dir/include/graphic.c.obj"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/include/graphic.c.obj -MF CMakeFiles/APPPSP.dir/include/graphic.c.obj.d -o CMakeFiles/APPPSP.dir/include/graphic.c.obj -c /home/caiomadeira/Desktop/app-psp/include/graphic.c
+CMakeFiles/APPPSP.dir/include/graphic.cpp.obj: CMakeFiles/APPPSP.dir/flags.make
+CMakeFiles/APPPSP.dir/include/graphic.cpp.obj: /home/caiomadeira/Desktop/app-psp/include/graphic.cpp
+CMakeFiles/APPPSP.dir/include/graphic.cpp.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/APPPSP.dir/include/graphic.cpp.obj"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/include/graphic.cpp.obj -MF CMakeFiles/APPPSP.dir/include/graphic.cpp.obj.d -o CMakeFiles/APPPSP.dir/include/graphic.cpp.obj -c /home/caiomadeira/Desktop/app-psp/include/graphic.cpp
 
-CMakeFiles/APPPSP.dir/include/graphic.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/APPPSP.dir/include/graphic.c.i"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caiomadeira/Desktop/app-psp/include/graphic.c > CMakeFiles/APPPSP.dir/include/graphic.c.i
+CMakeFiles/APPPSP.dir/include/graphic.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/APPPSP.dir/include/graphic.cpp.i"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caiomadeira/Desktop/app-psp/include/graphic.cpp > CMakeFiles/APPPSP.dir/include/graphic.cpp.i
 
-CMakeFiles/APPPSP.dir/include/graphic.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/APPPSP.dir/include/graphic.c.s"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caiomadeira/Desktop/app-psp/include/graphic.c -o CMakeFiles/APPPSP.dir/include/graphic.c.s
+CMakeFiles/APPPSP.dir/include/graphic.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/APPPSP.dir/include/graphic.cpp.s"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caiomadeira/Desktop/app-psp/include/graphic.cpp -o CMakeFiles/APPPSP.dir/include/graphic.cpp.s
 
-CMakeFiles/APPPSP.dir/include/player.c.obj: CMakeFiles/APPPSP.dir/flags.make
-CMakeFiles/APPPSP.dir/include/player.c.obj: /home/caiomadeira/Desktop/app-psp/include/player.c
-CMakeFiles/APPPSP.dir/include/player.c.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/APPPSP.dir/include/player.c.obj"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/include/player.c.obj -MF CMakeFiles/APPPSP.dir/include/player.c.obj.d -o CMakeFiles/APPPSP.dir/include/player.c.obj -c /home/caiomadeira/Desktop/app-psp/include/player.c
+CMakeFiles/APPPSP.dir/include/player.cpp.obj: CMakeFiles/APPPSP.dir/flags.make
+CMakeFiles/APPPSP.dir/include/player.cpp.obj: /home/caiomadeira/Desktop/app-psp/include/player.cpp
+CMakeFiles/APPPSP.dir/include/player.cpp.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/APPPSP.dir/include/player.cpp.obj"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/include/player.cpp.obj -MF CMakeFiles/APPPSP.dir/include/player.cpp.obj.d -o CMakeFiles/APPPSP.dir/include/player.cpp.obj -c /home/caiomadeira/Desktop/app-psp/include/player.cpp
 
-CMakeFiles/APPPSP.dir/include/player.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/APPPSP.dir/include/player.c.i"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caiomadeira/Desktop/app-psp/include/player.c > CMakeFiles/APPPSP.dir/include/player.c.i
+CMakeFiles/APPPSP.dir/include/player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/APPPSP.dir/include/player.cpp.i"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caiomadeira/Desktop/app-psp/include/player.cpp > CMakeFiles/APPPSP.dir/include/player.cpp.i
 
-CMakeFiles/APPPSP.dir/include/player.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/APPPSP.dir/include/player.c.s"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caiomadeira/Desktop/app-psp/include/player.c -o CMakeFiles/APPPSP.dir/include/player.c.s
+CMakeFiles/APPPSP.dir/include/player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/APPPSP.dir/include/player.cpp.s"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caiomadeira/Desktop/app-psp/include/player.cpp -o CMakeFiles/APPPSP.dir/include/player.cpp.s
 
-CMakeFiles/APPPSP.dir/include/audio.c.obj: CMakeFiles/APPPSP.dir/flags.make
-CMakeFiles/APPPSP.dir/include/audio.c.obj: /home/caiomadeira/Desktop/app-psp/include/audio.c
-CMakeFiles/APPPSP.dir/include/audio.c.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/APPPSP.dir/include/audio.c.obj"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/include/audio.c.obj -MF CMakeFiles/APPPSP.dir/include/audio.c.obj.d -o CMakeFiles/APPPSP.dir/include/audio.c.obj -c /home/caiomadeira/Desktop/app-psp/include/audio.c
+CMakeFiles/APPPSP.dir/include/audio.cpp.obj: CMakeFiles/APPPSP.dir/flags.make
+CMakeFiles/APPPSP.dir/include/audio.cpp.obj: /home/caiomadeira/Desktop/app-psp/include/audio.cpp
+CMakeFiles/APPPSP.dir/include/audio.cpp.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/APPPSP.dir/include/audio.cpp.obj"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/include/audio.cpp.obj -MF CMakeFiles/APPPSP.dir/include/audio.cpp.obj.d -o CMakeFiles/APPPSP.dir/include/audio.cpp.obj -c /home/caiomadeira/Desktop/app-psp/include/audio.cpp
 
-CMakeFiles/APPPSP.dir/include/audio.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/APPPSP.dir/include/audio.c.i"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caiomadeira/Desktop/app-psp/include/audio.c > CMakeFiles/APPPSP.dir/include/audio.c.i
+CMakeFiles/APPPSP.dir/include/audio.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/APPPSP.dir/include/audio.cpp.i"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caiomadeira/Desktop/app-psp/include/audio.cpp > CMakeFiles/APPPSP.dir/include/audio.cpp.i
 
-CMakeFiles/APPPSP.dir/include/audio.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/APPPSP.dir/include/audio.c.s"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caiomadeira/Desktop/app-psp/include/audio.c -o CMakeFiles/APPPSP.dir/include/audio.c.s
+CMakeFiles/APPPSP.dir/include/audio.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/APPPSP.dir/include/audio.cpp.s"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caiomadeira/Desktop/app-psp/include/audio.cpp -o CMakeFiles/APPPSP.dir/include/audio.cpp.s
 
-CMakeFiles/APPPSP.dir/include/common.c.obj: CMakeFiles/APPPSP.dir/flags.make
-CMakeFiles/APPPSP.dir/include/common.c.obj: /home/caiomadeira/Desktop/app-psp/include/common.c
-CMakeFiles/APPPSP.dir/include/common.c.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/APPPSP.dir/include/common.c.obj"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/include/common.c.obj -MF CMakeFiles/APPPSP.dir/include/common.c.obj.d -o CMakeFiles/APPPSP.dir/include/common.c.obj -c /home/caiomadeira/Desktop/app-psp/include/common.c
+CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj: CMakeFiles/APPPSP.dir/flags.make
+CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj: /home/caiomadeira/Desktop/app-psp/include/LLMInference.cpp
+CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj -MF CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj.d -o CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj -c /home/caiomadeira/Desktop/app-psp/include/LLMInference.cpp
 
-CMakeFiles/APPPSP.dir/include/common.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/APPPSP.dir/include/common.c.i"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caiomadeira/Desktop/app-psp/include/common.c > CMakeFiles/APPPSP.dir/include/common.c.i
+CMakeFiles/APPPSP.dir/include/LLMInference.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/APPPSP.dir/include/LLMInference.cpp.i"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caiomadeira/Desktop/app-psp/include/LLMInference.cpp > CMakeFiles/APPPSP.dir/include/LLMInference.cpp.i
 
-CMakeFiles/APPPSP.dir/include/common.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/APPPSP.dir/include/common.c.s"
-	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caiomadeira/Desktop/app-psp/include/common.c -o CMakeFiles/APPPSP.dir/include/common.c.s
+CMakeFiles/APPPSP.dir/include/LLMInference.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/APPPSP.dir/include/LLMInference.cpp.s"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caiomadeira/Desktop/app-psp/include/LLMInference.cpp -o CMakeFiles/APPPSP.dir/include/LLMInference.cpp.s
+
+CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj: CMakeFiles/APPPSP.dir/flags.make
+CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj: /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/common/common.cpp
+CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj: CMakeFiles/APPPSP.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj -MF CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj.d -o CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/common/common.cpp
+
+CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.i"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/common/common.cpp > CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.i
+
+CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.s"
+	/home/caiomadeira/pspdev/bin/psp-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/common/common.cpp -o CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.s
 
 # Object files for target APPPSP
 APPPSP_OBJECTS = \
-"CMakeFiles/APPPSP.dir/main.c.obj" \
-"CMakeFiles/APPPSP.dir/include/graphic.c.obj" \
-"CMakeFiles/APPPSP.dir/include/player.c.obj" \
-"CMakeFiles/APPPSP.dir/include/audio.c.obj" \
-"CMakeFiles/APPPSP.dir/include/common.c.obj"
+"CMakeFiles/APPPSP.dir/main.cpp.obj" \
+"CMakeFiles/APPPSP.dir/include/graphic.cpp.obj" \
+"CMakeFiles/APPPSP.dir/include/player.cpp.obj" \
+"CMakeFiles/APPPSP.dir/include/audio.cpp.obj" \
+"CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj" \
+"CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj"
 
 # External object files for target APPPSP
 APPPSP_EXTERNAL_OBJECTS =
 
-APPPSP: CMakeFiles/APPPSP.dir/main.c.obj
-APPPSP: CMakeFiles/APPPSP.dir/include/graphic.c.obj
-APPPSP: CMakeFiles/APPPSP.dir/include/player.c.obj
-APPPSP: CMakeFiles/APPPSP.dir/include/audio.c.obj
-APPPSP: CMakeFiles/APPPSP.dir/include/common.c.obj
+APPPSP: CMakeFiles/APPPSP.dir/main.cpp.obj
+APPPSP: CMakeFiles/APPPSP.dir/include/graphic.cpp.obj
+APPPSP: CMakeFiles/APPPSP.dir/include/player.cpp.obj
+APPPSP: CMakeFiles/APPPSP.dir/include/audio.cpp.obj
+APPPSP: CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj
+APPPSP: CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj
 APPPSP: CMakeFiles/APPPSP.dir/build.make
+APPPSP: externals/llama.cpp/src/libllama.a
+APPPSP: externals/llama.cpp/ggml/src/libggml.a
+APPPSP: externals/llama.cpp/ggml/src/libggml-cpu.a
+APPPSP: externals/llama.cpp/ggml/src/libggml-base.a
 APPPSP: CMakeFiles/APPPSP.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable APPPSP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable APPPSP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/APPPSP.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -E cmake_echo_color --cyan Not\ stripping\ binary\ for\ target\ APPPSP,\ build\ type\ is\ .
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Stripping binary for target APPPSP"
+	/home/caiomadeira/pspdev/bin/psp-strip /home/caiomadeira/Desktop/app-psp/build/APPPSP
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Calling psp-fixup-imports for target APPPSP"
 	/home/caiomadeira/pspdev/bin/psp-fixup-imports /home/caiomadeira/Desktop/app-psp/build/APPPSP
 	/usr/bin/cmake -E cmake_echo_color --cyan Not\ building\ PRX\ for\ target\ APPPSP

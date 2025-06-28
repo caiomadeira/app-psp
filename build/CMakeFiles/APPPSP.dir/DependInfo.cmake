@@ -8,11 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/caiomadeira/Desktop/app-psp/include/audio.c" "CMakeFiles/APPPSP.dir/include/audio.c.obj" "gcc" "CMakeFiles/APPPSP.dir/include/audio.c.obj.d"
-  "/home/caiomadeira/Desktop/app-psp/include/common.c" "CMakeFiles/APPPSP.dir/include/common.c.obj" "gcc" "CMakeFiles/APPPSP.dir/include/common.c.obj.d"
-  "/home/caiomadeira/Desktop/app-psp/include/graphic.c" "CMakeFiles/APPPSP.dir/include/graphic.c.obj" "gcc" "CMakeFiles/APPPSP.dir/include/graphic.c.obj.d"
-  "/home/caiomadeira/Desktop/app-psp/include/player.c" "CMakeFiles/APPPSP.dir/include/player.c.obj" "gcc" "CMakeFiles/APPPSP.dir/include/player.c.obj.d"
-  "/home/caiomadeira/Desktop/app-psp/main.c" "CMakeFiles/APPPSP.dir/main.c.obj" "gcc" "CMakeFiles/APPPSP.dir/main.c.obj.d"
+  "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/common/common.cpp" "CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj" "gcc" "CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj.d"
+  "/home/caiomadeira/Desktop/app-psp/include/LLMInference.cpp" "CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj" "gcc" "CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj.d"
+  "/home/caiomadeira/Desktop/app-psp/include/audio.cpp" "CMakeFiles/APPPSP.dir/include/audio.cpp.obj" "gcc" "CMakeFiles/APPPSP.dir/include/audio.cpp.obj.d"
+  "/home/caiomadeira/Desktop/app-psp/include/graphic.cpp" "CMakeFiles/APPPSP.dir/include/graphic.cpp.obj" "gcc" "CMakeFiles/APPPSP.dir/include/graphic.cpp.obj.d"
+  "/home/caiomadeira/Desktop/app-psp/include/player.cpp" "CMakeFiles/APPPSP.dir/include/player.cpp.obj" "gcc" "CMakeFiles/APPPSP.dir/include/player.cpp.obj.d"
+  "/home/caiomadeira/Desktop/app-psp/main.cpp" "CMakeFiles/APPPSP.dir/main.cpp.obj" "gcc" "CMakeFiles/APPPSP.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

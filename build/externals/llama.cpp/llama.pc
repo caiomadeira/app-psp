@@ -1,0 +1,10 @@
+prefix=/home/caiomadeira/pspdev/psp
+exec_prefix=/home/caiomadeira/pspdev/psp
+libdir=/home/caiomadeira/pspdev/psp/lib
+includedir=/home/caiomadeira/pspdev/psp/include
+
+Name: llama
+Description: Port of Facebook's LLaMA model in C/C++
+Version: 0.0.1
+Libs: -L${libdir} -lggml -lggml-base -lllama
+Cflags: -I${includedir}

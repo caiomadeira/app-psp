@@ -1,0 +1,2 @@
+/home/caiomadeira/pspdev/bin/psp-ar qc libggml.a "CMakeFiles/ggml.dir/ggml-backend-reg.cpp.obj"
+/home/caiomadeira/pspdev/bin/psp-ranlib libggml.a

@@ -1,7 +1,7 @@
 #ifndef player_h
 #define player_h
 
-#include "common.h"
+#include "utils.h"
 
 typedef struct player {
     float x;

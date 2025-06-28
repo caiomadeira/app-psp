@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles /home/caiomadeira/Desktop/app-psp/build//CMakeFiles/progress.marks
@@ -142,125 +187,201 @@ copy_assets/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/copy_assets.dir/build.make CMakeFiles/copy_assets.dir/build
 .PHONY : copy_assets/fast
 
-include/audio.obj: include/audio.c.obj
+#=============================================================================
+# Target rules for targets named ggml-base
+
+# Build rule for target.
+ggml-base: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ggml-base
+.PHONY : ggml-base
+
+# fast build rule for target.
+ggml-base/fast:
+	$(MAKE) $(MAKESILENT) -f externals/llama.cpp/ggml/src/CMakeFiles/ggml-base.dir/build.make externals/llama.cpp/ggml/src/CMakeFiles/ggml-base.dir/build
+.PHONY : ggml-base/fast
+
+#=============================================================================
+# Target rules for targets named ggml
+
+# Build rule for target.
+ggml: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ggml
+.PHONY : ggml
+
+# fast build rule for target.
+ggml/fast:
+	$(MAKE) $(MAKESILENT) -f externals/llama.cpp/ggml/src/CMakeFiles/ggml.dir/build.make externals/llama.cpp/ggml/src/CMakeFiles/ggml.dir/build
+.PHONY : ggml/fast
+
+#=============================================================================
+# Target rules for targets named ggml-cpu
+
+# Build rule for target.
+ggml-cpu: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ggml-cpu
+.PHONY : ggml-cpu
+
+# fast build rule for target.
+ggml-cpu/fast:
+	$(MAKE) $(MAKESILENT) -f externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/build.make externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/build
+.PHONY : ggml-cpu/fast
+
+#=============================================================================
+# Target rules for targets named llama
+
+# Build rule for target.
+llama: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 llama
+.PHONY : llama
+
+# fast build rule for target.
+llama/fast:
+	$(MAKE) $(MAKESILENT) -f externals/llama.cpp/src/CMakeFiles/llama.dir/build.make externals/llama.cpp/src/CMakeFiles/llama.dir/build
+.PHONY : llama/fast
+
+externals/llama.cpp/common/common.obj: externals/llama.cpp/common/common.cpp.obj
+.PHONY : externals/llama.cpp/common/common.obj
+
+# target to build an object file
+externals/llama.cpp/common/common.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.obj
+.PHONY : externals/llama.cpp/common/common.cpp.obj
+
+externals/llama.cpp/common/common.i: externals/llama.cpp/common/common.cpp.i
+.PHONY : externals/llama.cpp/common/common.i
+
+# target to preprocess a source file
+externals/llama.cpp/common/common.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.i
+.PHONY : externals/llama.cpp/common/common.cpp.i
+
+externals/llama.cpp/common/common.s: externals/llama.cpp/common/common.cpp.s
+.PHONY : externals/llama.cpp/common/common.s
+
+# target to generate assembly for a file
+externals/llama.cpp/common/common.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/externals/llama.cpp/common/common.cpp.s
+.PHONY : externals/llama.cpp/common/common.cpp.s
+
+include/LLMInference.obj: include/LLMInference.cpp.obj
+.PHONY : include/LLMInference.obj
+
+# target to build an object file
+include/LLMInference.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/LLMInference.cpp.obj
+.PHONY : include/LLMInference.cpp.obj
+
+include/LLMInference.i: include/LLMInference.cpp.i
+.PHONY : include/LLMInference.i
+
+# target to preprocess a source file
+include/LLMInference.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/LLMInference.cpp.i
+.PHONY : include/LLMInference.cpp.i
+
+include/LLMInference.s: include/LLMInference.cpp.s
+.PHONY : include/LLMInference.s
+
+# target to generate assembly for a file
+include/LLMInference.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/LLMInference.cpp.s
+.PHONY : include/LLMInference.cpp.s
+
+include/audio.obj: include/audio.cpp.obj
 .PHONY : include/audio.obj
 
 # target to build an object file
-include/audio.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/audio.c.obj
-.PHONY : include/audio.c.obj
+include/audio.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/audio.cpp.obj
+.PHONY : include/audio.cpp.obj
 
-include/audio.i: include/audio.c.i
+include/audio.i: include/audio.cpp.i
 .PHONY : include/audio.i
 
 # target to preprocess a source file
-include/audio.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/audio.c.i
-.PHONY : include/audio.c.i
+include/audio.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/audio.cpp.i
+.PHONY : include/audio.cpp.i
 
-include/audio.s: include/audio.c.s
+include/audio.s: include/audio.cpp.s
 .PHONY : include/audio.s
 
 # target to generate assembly for a file
-include/audio.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/audio.c.s
-.PHONY : include/audio.c.s
+include/audio.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/audio.cpp.s
+.PHONY : include/audio.cpp.s
 
-include/common.obj: include/common.c.obj
-.PHONY : include/common.obj
-
-# target to build an object file
-include/common.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/common.c.obj
-.PHONY : include/common.c.obj
-
-include/common.i: include/common.c.i
-.PHONY : include/common.i
-
-# target to preprocess a source file
-include/common.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/common.c.i
-.PHONY : include/common.c.i
-
-include/common.s: include/common.c.s
-.PHONY : include/common.s
-
-# target to generate assembly for a file
-include/common.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/common.c.s
-.PHONY : include/common.c.s
-
-include/graphic.obj: include/graphic.c.obj
+include/graphic.obj: include/graphic.cpp.obj
 .PHONY : include/graphic.obj
 
 # target to build an object file
-include/graphic.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.c.obj
-.PHONY : include/graphic.c.obj
+include/graphic.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.cpp.obj
+.PHONY : include/graphic.cpp.obj
 
-include/graphic.i: include/graphic.c.i
+include/graphic.i: include/graphic.cpp.i
 .PHONY : include/graphic.i
 
 # target to preprocess a source file
-include/graphic.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.c.i
-.PHONY : include/graphic.c.i
+include/graphic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.cpp.i
+.PHONY : include/graphic.cpp.i
 
-include/graphic.s: include/graphic.c.s
+include/graphic.s: include/graphic.cpp.s
 .PHONY : include/graphic.s
 
 # target to generate assembly for a file
-include/graphic.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.c.s
-.PHONY : include/graphic.c.s
+include/graphic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.cpp.s
+.PHONY : include/graphic.cpp.s
 
-include/player.obj: include/player.c.obj
+include/player.obj: include/player.cpp.obj
 .PHONY : include/player.obj
 
 # target to build an object file
-include/player.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/player.c.obj
-.PHONY : include/player.c.obj
+include/player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/player.cpp.obj
+.PHONY : include/player.cpp.obj
 
-include/player.i: include/player.c.i
+include/player.i: include/player.cpp.i
 .PHONY : include/player.i
 
 # target to preprocess a source file
-include/player.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/player.c.i
-.PHONY : include/player.c.i
+include/player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/player.cpp.i
+.PHONY : include/player.cpp.i
 
-include/player.s: include/player.c.s
+include/player.s: include/player.cpp.s
 .PHONY : include/player.s
 
 # target to generate assembly for a file
-include/player.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/player.c.s
-.PHONY : include/player.c.s
+include/player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/player.cpp.s
+.PHONY : include/player.cpp.s
 
-main.obj: main.c.obj
+main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/main.c.obj
-.PHONY : main.c.obj
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-main.i: main.c.i
+main.i: main.cpp.i
 .PHONY : main.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/main.c.i
-.PHONY : main.c.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-main.s: main.c.s
+main.s: main.cpp.s
 .PHONY : main.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/main.c.s
-.PHONY : main.c.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -269,15 +390,26 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... copy_assets"
 	@echo "... APPPSP"
+	@echo "... ggml"
+	@echo "... ggml-base"
+	@echo "... ggml-cpu"
+	@echo "... llama"
+	@echo "... externals/llama.cpp/common/common.obj"
+	@echo "... externals/llama.cpp/common/common.i"
+	@echo "... externals/llama.cpp/common/common.s"
+	@echo "... include/LLMInference.obj"
+	@echo "... include/LLMInference.i"
+	@echo "... include/LLMInference.s"
 	@echo "... include/audio.obj"
 	@echo "... include/audio.i"
 	@echo "... include/audio.s"
-	@echo "... include/common.obj"
-	@echo "... include/common.i"
-	@echo "... include/common.s"
 	@echo "... include/graphic.obj"
 	@echo "... include/graphic.i"
 	@echo "... include/graphic.s"

@@ -1,0 +1,290 @@
+[
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-gcc -DGGML_SCHED_MAX_COPIES=4 -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu11 -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -o CMakeFiles/ggml-base.dir/ggml.c.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml.c",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml.c",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-base.dir/ggml.c.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml-base.dir/ggml.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-base.dir/ggml.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-gcc -DGGML_SCHED_MAX_COPIES=4 -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu11 -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -o CMakeFiles/ggml-base.dir/ggml-alloc.c.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-alloc.c",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-alloc.c",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-base.dir/ggml-alloc.c.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml-base.dir/ggml-backend.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-backend.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-backend.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-base.dir/ggml-backend.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml-base.dir/ggml-opt.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-opt.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-opt.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-base.dir/ggml-opt.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml-base.dir/ggml-threading.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-threading.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-threading.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-base.dir/ggml-threading.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-gcc -DGGML_SCHED_MAX_COPIES=4 -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu11 -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -o CMakeFiles/ggml-base.dir/ggml-quants.c.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-quants.c",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-quants.c",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml-base.dir/gguf.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/gguf.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/gguf.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-base.dir/gguf.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-gcc -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu11 -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/ggml-cpu.c",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/ggml-cpu.c",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.c.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/ggml-cpu.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/ggml-cpu.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/repack.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/repack.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/repack.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/repack.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/hbm.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/hbm.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/hbm.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/hbm.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-gcc -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu11 -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wdouble-promotion -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/quants.c.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/quants.c",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/quants.c",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/quants.c.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/traits.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/traits.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/traits.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/traits.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/amx/amx.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/amx/amx.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/amx.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/amx/mmq.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/amx/mmq.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/binary-ops.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/binary-ops.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/binary-ops.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/unary-ops.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/unary-ops.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/unary-ops.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/vec.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/vec.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/vec.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/ops.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/ops.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/.. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -DGGML_CPU_GENERIC -o CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/llamafile/sgemm.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-cpu/llamafile/sgemm.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/llamafile/sgemm.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/ggml/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_SCHED_MAX_COPIES=4 -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D_XOPEN_SOURCE=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/ggml.dir/ggml-backend-reg.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-backend-reg.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/ggml-backend-reg.cpp",
+  "output": "externals/llama.cpp/ggml/src/CMakeFiles/ggml.dir/ggml-backend-reg.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-adapter.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-adapter.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-adapter.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-adapter.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-arch.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-arch.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-arch.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-arch.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-batch.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-batch.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-batch.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-batch.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-chat.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-chat.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-chat.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-chat.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-context.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-context.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-context.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-context.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-cparams.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-cparams.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-cparams.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-cparams.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-grammar.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-grammar.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-grammar.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-grammar.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-graph.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-graph.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-graph.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-graph.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-hparams.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-hparams.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-hparams.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-hparams.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-impl.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-impl.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-impl.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-impl.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-io.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-io.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-io.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-io.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-kv-cache-unified.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-kv-cache-unified.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-kv-cache-unified.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-kv-cache-unified.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-kv-cache-unified-iswa.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-kv-cache-unified-iswa.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-kv-cache-unified-iswa.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-kv-cache-unified-iswa.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-memory.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-memory.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-memory.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-memory.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-memory-hybrid.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-memory-hybrid.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-memory-hybrid.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-memory-hybrid.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-memory-recurrent.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-memory-recurrent.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-memory-recurrent.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-memory-recurrent.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-mmap.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-mmap.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-mmap.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-mmap.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-model-loader.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-model-loader.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-model-loader.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-model-loader.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-model-saver.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-model-saver.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-model-saver.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-model-saver.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-model.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-model.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-model.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-model.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-quant.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-quant.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-quant.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-quant.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-sampling.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-sampling.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-sampling.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-sampling.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/llama-vocab.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-vocab.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/llama-vocab.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/llama-vocab.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/unicode-data.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/unicode-data.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/unicode-data.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/unicode-data.cpp.obj"
+},
+{
+  "directory": "/home/caiomadeira/Desktop/app-psp/build/externals/llama.cpp/src",
+  "command": "/home/caiomadeira/pspdev/bin/psp-g++ -DGGML_USE_CPU -DPSP -D_PSP_FW_VERSION=600 -D__PSP__ -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/. -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/../include -I/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/ggml/src/../include -I/home/caiomadeira/pspdev/psp/include -I/home/caiomadeira/pspdev/psp/sdk/include -DPSP -O3 -DNDEBUG -std=gnu++17 -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -o CMakeFiles/llama.dir/unicode.cpp.obj -c /home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/unicode.cpp",
+  "file": "/home/caiomadeira/Desktop/app-psp/externals/llama.cpp/src/unicode.cpp",
+  "output": "externals/llama.cpp/src/CMakeFiles/llama.dir/unicode.cpp.obj"
+}
+]
