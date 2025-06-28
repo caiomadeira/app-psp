@@ -6,7 +6,7 @@
 #include <SDL3/SDL_main.h>
 
 // COLORS SDL
-extern SDL_Color SDL_WHITE = { 255, 255, 255, 255 };
+SDL_Color SDL_WHITE = { 255, 255, 255, 255 };
 
 typedef struct app {
 	SDL_Window *window;
@@ -137,28 +137,16 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     // --- LÓGICA DE RENDERIZAÇÃO ---
 
     //SDL_Renderer *renderer = SDL_GetRenderer(a->window);
-    SDL_SetRenderDrawColor(a->renderer, 0,0,0, 255);
+    SDL_SetRenderDrawColor(a->renderer, 0, 0, 0, 255);
     SDL_RenderClear(a->renderer);
 
     SDL_RenderTexture(a->renderer, a->background_texture, NULL, NULL);
-    
-    // Drawing Text
+
+    // Draw Text
     drawTextWithFont("Hello PSP!", 50, 50, a->font, a->renderer, SDL_WHITE);
-    // ----------------------
-    SDL_FRect player_rect = { a->player->x, a->player->y, 20, 20 };
-
-    // Centraliza o retângulo na posição do jogador
-    player_rect.x = a->player->x * 480 + (480 - player_rect.w) / 2;
-    player_rect.y = a->player->y * 272 + (272 - player_rect.h) / 2;
-
-    // Desenha o retângulo do jogador
-    SDL_SetRenderDrawColor(a->renderer, 120, 255, 255, 255); // Branco
-    SDL_RenderFillRect(a->renderer, &player_rect);
-    
-    // Mostra na tela tudo o que foi desenhado
-    SDL_RenderPresent(a->renderer);
-    //SDL_GL_SwapWindow(a->window);
-    
+    // Draw Rect
+    drawRect(50, 50, 50, 50, a->renderer, 192, 92, 255, 255);
+    SDL_RenderPresent(a->renderer); // Mostra na tela tudo o que foi desenhado    
     return SDL_APP_CONTINUE;
 }
 
@@ -173,8 +161,6 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
     if (event->type == SDL_EVENT_QUIT) {
         return SDL_APP_SUCCESS;
     }
-
-
     return SDL_APP_CONTINUE;
 }
 
