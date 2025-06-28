@@ -103,13 +103,13 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         return SDL_APP_FAILURE;
     }
 
-    int grid_pos_x = 5;
-    int grid_pos_y = 5;
     int grid_width = WINDOW_WIDTH / 2;
     int grid_height = WINDOW_HEIGHT - 15;
+    int grid_pos_x = (WINDOW_WIDTH - grid_width) / 2;
+    int grid_pos_y = (WINDOW_HEIGHT - grid_height) / 2;
     int padding = 2;
     GridArea* gridArea = newGridArea(grid_pos_x, grid_pos_y, grid_width, grid_height, padding);
-    a->grid = newGrid(15, 15, gridArea);
+    a->grid = newGrid(10, 10, gridArea);
     if (a->grid == NULL) {
         printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
