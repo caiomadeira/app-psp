@@ -1,18 +1,12 @@
 #include "include/common.h"
 #include "include/player.h"
 #include "include/audio.h"
-
-#include <unistd.h> // Necessário para a função chdir()
-#include <string.h> // Necessário para a função strrchr()
-#include <SDL3_image/SDL_image.h> // A de imagem está na sua própria pasta!
-#include <SDL3/SDL_oldnames.h>
+#include "include/graphic.h"
 #define SDL_MAIN_USE_CALLBACKS
 #include <SDL3/SDL_main.h>
-#include <SDL3_ttf/SDL_ttf.h>
-#include<pspaudio.h>
-#include<pspaudiolib.h>
 
-#define INIT_OPEN_GL_WINDOW false
+// COLORS SDL
+extern SDL_Color SDL_WHITE = { 255, 255, 255, 255 };
 
 typedef struct app {
 	SDL_Window *window;
@@ -26,22 +20,6 @@ typedef struct app {
     SceCtrlData prev_pad;
 } app_t;
 
-// Pega o caminho do executável e muda o diretório de trabalho
-void get_binary_path(int argc, char *argv[])
-{
-    if (argc > 0 && argv[0] != NULL)
-    {
-        char* path = strdup(argv[0]);
-        char* last_path = strrchr(path, '/');
-        if (last_path)
-        {
-            *last_path = '\0';
-            chdir(path);
-        }
-        free(path);
-    }
-}
-
 /*
  *:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
  *  ON READY
@@ -50,69 +28,49 @@ void get_binary_path(int argc, char *argv[])
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
 {
 	app_t *a;
-    get_binary_path(argc, argv);
+    getBinaryPath(argc, argv);
 
-    // --- PASSO 1 (CRÍTICO): Inicializar o SDL SEM o subsistema de áudio ---
-    // A pspaudiolib irá controlar o hardware de som diretamente.
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_Init(VIDEO) falhou: %s", SDL_GetError());
+        printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
 
-    // --- PASSO 2: Chamar a nossa função de inicialização de áudio nativo ---
-    if (init_native_audio("test.wav") != 0) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "native_audio_init_and_load falhou.");
-        // Pode adicionar aqui um pspDebugScreenPrintf para ver o erro no PSP.
+    if (init_native_audio(TEST_WAV) != 0) {
+        printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
     
-    // if (init_audio() != 0) {
-    //     return SDL_APP_FAILURE;
-    // }
-    
-    if (TTF_Init() == -1)
-    {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "falha ao iniciar SDL_ttf: %s", SDL_GetError());
+    if (TTF_Init() == -1) {
+        printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
 
 	a = (app_t*)SDL_calloc(1, sizeof(app_t)); // usando calloc p/ zerar a memoria
-	if (a == NULL)
-    {
-        pspDebugScreenInit();
-        pspDebugScreenClear();
-        pspDebugScreenSetXY(20, 7);
-        pspDebugScreenPrintf(SDL_GetError());
-        SDL_Delay(4000);
+	if (a == NULL) {
+        printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
 
     SDL_zero(a->prev_pad);
 
     a->window = SDL_CreateWindow(WINDOW_NAME, WINDOW_WIDTH, WINDOW_HEIGHT, INIT_OPEN_GL_WINDOW); // janela de renderizacao c open_gl
-    if (a->window == NULL)
-    {
-        pspDebugScreenInit();
-        pspDebugScreenClear();
-        pspDebugScreenSetXY(20, 7);
-        pspDebugScreenPrintf(SDL_GetError());
-        SDL_Delay(4000);
+    if (a->window == NULL) {
+        printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
 
     a->renderer = SDL_CreateRenderer(a->window, NULL);
-    if (a->renderer == NULL)
-    {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Falha ao criar renderer: %s", SDL_GetError());
+    if (a->renderer == NULL) {
+        printDebug(SDL_GetError(), 5000);
         SDL_DestroyWindow(a->window);
         SDL_free(a);
         SDL_Quit();
         return SDL_APP_FAILURE;
     }
 
-    a->font = TTF_OpenFont("roasted-chicken.ttf", 30);
+    a->font = TTF_OpenFont(ROAST_CHICKEN_TTF, 30);
     if (a->font == NULL) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "FALHA AO CARREGAR A FONTE: %s", SDL_GetError());
+        printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
 
@@ -123,40 +81,26 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
     sceCtrlSetSamplingCycle(0);
     sceCtrlSetSamplingMode(PSP_CTRL_MODE_ANALOG);
 
-    SDL_Surface *bg_surface = IMG_Load("background.png");
+    SDL_Surface *bg_surface = IMG_Load(BACKGROUND_PNG);
     if (!bg_surface) {
-        pspDebugScreenInit();
-        pspDebugScreenClear();
-        pspDebugScreenSetXY(20, 7);
-        pspDebugScreenPrintf(SDL_GetError());
-        SDL_Delay(4000);
-            
+        printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
     // aqui importante: converte a superficie numa texture otimizada pra a GPU e guarda em um buffer
     a->background_texture = SDL_CreateTextureFromSurface(a->renderer, bg_surface);
     SDL_DestroySurface(bg_surface); // libera a superficie da mem. ja que n precisamos mais
     if (!a->background_texture) {
-        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Falha ao criar textura do background: %s", SDL_GetError());
+        printDebug(SDL_GetError(), 5000);
         SDL_DestroyRenderer(a->renderer);
         SDL_DestroyWindow(a->window);
         SDL_free(a);
         SDL_Quit();
         return SDL_APP_FAILURE;
     }
-    
-    // // load audio
-    // load_audiof();
-    // play_background_music();
 
     a->player = init_player();
-    if (a->player == NULL)
-    {
-        pspDebugScreenInit();
-        pspDebugScreenClear();
-        pspDebugScreenSetXY(20, 7);
-        pspDebugScreenPrintf(SDL_GetError());
-        SDL_Delay(4000);
+    if (a->player == NULL) {
+        printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
 
@@ -197,31 +141,9 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_RenderClear(a->renderer);
 
     SDL_RenderTexture(a->renderer, a->background_texture, NULL, NULL);
-    // ---------- DRAWING TEXT
-    SDL_Color white = { 255, 255, 255, 255 };
-
-    SDL_Surface* textSurface = TTF_RenderText_Solid(a->font, "Hello PSP!", strlen("Hello PSP!"), white);
-    if (textSurface == NULL)
-    {
-        SDL_Log("Nao foi possivel criar a surperficie do texto: %s", SDL_GetError());
-    } else {
-        SDL_Texture* textTexture = SDL_CreateTextureFromSurface(a->renderer, textSurface);
-        if (textTexture == NULL)
-        {
-            SDL_Log("Nao foi possivel criar a texture do texto: %s", SDL_GetError());
-        } else {
-            SDL_FRect textRect;
-            textRect.x = 20;
-            textRect.y = 20;
-            textRect.w = textSurface->w;
-            textRect.h = textSurface->h;
-            SDL_RenderTexture(a->renderer, textTexture, NULL, &textRect);
-
-            SDL_DestroyTexture(textTexture);
-        }
-        SDL_DestroySurface(textSurface);
-    }
-
+    
+    // Drawing Text
+    drawTextWithFont("Hello PSP!", 50, 50, a->font, a->renderer, SDL_WHITE);
     // ----------------------
     SDL_FRect player_rect = { a->player->x, a->player->y, 20, 20 };
 

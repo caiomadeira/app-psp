@@ -8,3 +8,4 @@ NAO INSTALE O PSPTOOLCHAIN SO VAI TRAZER PROBLEMAS
 
 TODO:
  - Modificar o build.sh pra passar os assets pro mesmo local do EBOOT ao buildar tb
+

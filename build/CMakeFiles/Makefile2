@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/caiomadeira/Desktop/app-psp/build
 
 # The main recursive "all" target.
 all: CMakeFiles/APPPSP.dir/all
+all: CMakeFiles/copy_assets.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,21 +73,22 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/APPPSP.dir/clean
+clean: CMakeFiles/copy_assets.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/APPPSP.dir
 
 # All Build rule for target.
-CMakeFiles/APPPSP.dir/all:
+CMakeFiles/APPPSP.dir/all: CMakeFiles/copy_assets.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=1,2,3,4 "Built target APPPSP"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target APPPSP"
 .PHONY : CMakeFiles/APPPSP.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/APPPSP.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/APPPSP.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles 0
 .PHONY : CMakeFiles/APPPSP.dir/rule
@@ -99,6 +101,32 @@ APPPSP: CMakeFiles/APPPSP.dir/rule
 CMakeFiles/APPPSP.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/clean
 .PHONY : CMakeFiles/APPPSP.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/copy_assets.dir
+
+# All Build rule for target.
+CMakeFiles/copy_assets.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/copy_assets.dir/build.make CMakeFiles/copy_assets.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/copy_assets.dir/build.make CMakeFiles/copy_assets.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num= "Built target copy_assets"
+.PHONY : CMakeFiles/copy_assets.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/copy_assets.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/copy_assets.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles 0
+.PHONY : CMakeFiles/copy_assets.dir/rule
+
+# Convenience name for target.
+copy_assets: CMakeFiles/copy_assets.dir/rule
+.PHONY : copy_assets
+
+# clean rule for target.
+CMakeFiles/copy_assets.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/copy_assets.dir/build.make CMakeFiles/copy_assets.dir/clean
+.PHONY : CMakeFiles/copy_assets.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

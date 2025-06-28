@@ -1,6 +1,9 @@
 #ifndef common_h
 #define common_h
 
+#include <SDL3_ttf/SDL_ttf.h>
+#include <SDL3_image/SDL_image.h>
+#include <SDL3/SDL_oldnames.h>
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_opengl.h>
 
@@ -17,12 +20,16 @@
 #include <pspdisplay.h>
 #include <pspdebug.h>
 #include <pspctrl.h>
+#include<pspaudio.h>
+#include<pspaudiolib.h>
+#include <unistd.h> // Necessário para a função chdir()
+#include <string.h> // Necessário para a função strrchr()
 
-
+// REDEFINING FUNCTIONS NAME
 #define readButtonState sceCtrlReadBufferPositive
 #define readButtonStateContinuous sceCtrlPeekBufferPositive
 
-// ABGR
+// COLORS ABGR
 #define RAW_BLUE 0x0FFFF0000
 #define RAW_RED 0xFF0000FF
 #define RAW_GREEN 0x0FF00FF00
@@ -40,9 +47,17 @@ typedef enum {
 } GameState;
 
 /* CONSTANTS */
-
 #define WINDOW_NAME "PSP GAME"
 #define WINDOW_WIDTH 480
 #define WINDOW_HEIGHT 272
+#define INIT_OPEN_GL_WINDOW false
+
+#define ROAST_CHICKEN_TTF "font/roasted-chicken.ttf"
+#define TEST_WAV "audio/test.wav"
+#define BACKGROUND_PNG "img/background.png"
+
+/* FUNCTIONS */
+void printDebug(const char* str, int delay);
+void getBinaryPath(int argc, char *argv[]);
 
 #endif

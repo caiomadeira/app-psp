@@ -4,9 +4,38 @@ project(APPPSP)
 
 add_executable(${PROJECT_NAME} 
     main.c
+    include/graphic.c
     include/player.c
     include/audio.c
+    include/common.c
 )
+
+set(ASSETS_DIR ${CMAKE_SOURCE_DIR}/assets)
+
+add_custom_target(
+    copy_assets ALL 
+    COMMENT "Copying assets to build directory..."
+)
+
+add_custom_command(
+    TARGET copy_assets 
+    COMMAND ${CMAKE_COMMAND} -E copy_directory "${ASSETS_DIR}/audio" "${CMAKE_BINARY_DIR}/audio"
+    COMMENT "Copying audio files..."
+)
+
+add_custom_command(
+    TARGET copy_assets 
+    COMMAND ${CMAKE_COMMAND} -E copy_directory "${ASSETS_DIR}/font" "${CMAKE_BINARY_DIR}/font"
+    COMMENT "Copying font files..."
+)
+
+add_custom_command(
+    TARGET copy_assets 
+    COMMAND ${CMAKE_COMMAND} -E copy_directory "${ASSETS_DIR}/img" "${CMAKE_BINARY_DIR}/img"
+    COMMENT "Copying img files..."
+)
+
+add_dependencies(${PROJECT_NAME} copy_assets)
 
 include(FindPkgConfig)
 pkg_search_module(SDL3 REQUIRED sdl3)

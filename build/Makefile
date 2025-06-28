@@ -129,6 +129,19 @@ APPPSP/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/build
 .PHONY : APPPSP/fast
 
+#=============================================================================
+# Target rules for targets named copy_assets
+
+# Build rule for target.
+copy_assets: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 copy_assets
+.PHONY : copy_assets
+
+# fast build rule for target.
+copy_assets/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/copy_assets.dir/build.make CMakeFiles/copy_assets.dir/build
+.PHONY : copy_assets/fast
+
 include/audio.obj: include/audio.c.obj
 .PHONY : include/audio.obj
 
@@ -152,6 +165,54 @@ include/audio.s: include/audio.c.s
 include/audio.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/audio.c.s
 .PHONY : include/audio.c.s
+
+include/common.obj: include/common.c.obj
+.PHONY : include/common.obj
+
+# target to build an object file
+include/common.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/common.c.obj
+.PHONY : include/common.c.obj
+
+include/common.i: include/common.c.i
+.PHONY : include/common.i
+
+# target to preprocess a source file
+include/common.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/common.c.i
+.PHONY : include/common.c.i
+
+include/common.s: include/common.c.s
+.PHONY : include/common.s
+
+# target to generate assembly for a file
+include/common.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/common.c.s
+.PHONY : include/common.c.s
+
+include/graphic.obj: include/graphic.c.obj
+.PHONY : include/graphic.obj
+
+# target to build an object file
+include/graphic.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.c.obj
+.PHONY : include/graphic.c.obj
+
+include/graphic.i: include/graphic.c.i
+.PHONY : include/graphic.i
+
+# target to preprocess a source file
+include/graphic.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.c.i
+.PHONY : include/graphic.c.i
+
+include/graphic.s: include/graphic.c.s
+.PHONY : include/graphic.s
+
+# target to generate assembly for a file
+include/graphic.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.c.s
+.PHONY : include/graphic.c.s
 
 include/player.obj: include/player.c.obj
 .PHONY : include/player.obj
@@ -209,10 +270,17 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... copy_assets"
 	@echo "... APPPSP"
 	@echo "... include/audio.obj"
 	@echo "... include/audio.i"
 	@echo "... include/audio.s"
+	@echo "... include/common.obj"
+	@echo "... include/common.i"
+	@echo "... include/common.s"
+	@echo "... include/graphic.obj"
+	@echo "... include/graphic.i"
+	@echo "... include/graphic.s"
 	@echo "... include/player.obj"
 	@echo "... include/player.i"
 	@echo "... include/player.s"

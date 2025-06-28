@@ -1,3 +1,4 @@
 /home/caiomadeira/Desktop/app-psp/build/CMakeFiles/APPPSP.dir
+/home/caiomadeira/Desktop/app-psp/build/CMakeFiles/copy_assets.dir
 /home/caiomadeira/Desktop/app-psp/build/CMakeFiles/edit_cache.dir
 /home/caiomadeira/Desktop/app-psp/build/CMakeFiles/rebuild_cache.dir
