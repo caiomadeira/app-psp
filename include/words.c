@@ -2,7 +2,7 @@
 
 Word words[] = {
     {0, "Some eggs are made of.", "chocolate"},
-    {1, "Can be used to talk or to pay debts.", "telephone"},
+    {1, "Can be used to talk.", "telephone"},
     {2, "One man walked above.", "water"},
     {3, "A star.", "sun"},
     {4, "Has wheels and can be fast.", "car"},

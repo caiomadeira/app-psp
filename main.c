@@ -22,7 +22,9 @@ typedef struct app {
     SceCtrlData prev_pad;
     Grid* grid;
     const char* current_hint;
-    WordOrientation current_orientation;
+    WordOrientation active_orientation;
+    SelectionMode selection_mode;
+    Word* selected_word;
 } app_t;
 
 // inicializa com as palavras
@@ -30,8 +32,7 @@ typedef struct app {
     Preciso usar delcarações externas pra acessar o banco.
     TODO: INvestigar o porque
 */
-extern Word words[];
-extern int words_count;
+void navigateInWordMode(app_t* a, int d_row, int d_col);
 
 void updateCurrentHint(app_t* a) {
     if (!a || !a->grid) return;
@@ -44,8 +45,8 @@ void updateCurrentHint(app_t* a) {
         return;
     }
 
-    Word* preferred_word = findWordAt(r, c, words, words_count, a->current_orientation);
-    Word* alternative_word = findWordAt(r, c, words, words_count, (a->current_orientation == HORIZONTAL) ? VERTICAL : HORIZONTAL);
+    Word* preferred_word = findWordAt(r, c, words, words_count, a->active_orientation);
+    Word* alternative_word = findWordAt(r, c, words, words_count, (a->active_orientation == HORIZONTAL) ? VERTICAL : HORIZONTAL);
     if (preferred_word) {
         a->current_hint = preferred_word->hint;
     } else if (alternative_word) {
@@ -141,6 +142,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
+
     #define CENTRALIZED false
     int grid_width, grid_height, grid_pos_x, grid_pos_y, padding = 0;
     if (CENTRALIZED) {
@@ -163,8 +165,17 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         return SDL_APP_FAILURE;
     }
 
-
     populateGridWithWords(a->grid, words, words_count);
+    // Iniciando o modo
+    a->selection_mode = WORD_MODE;
+    a->selected_word = &words[0];
+    a->active_orientation = HORIZONTAL;
+
+    // coloca a posicao inicial do cursor para o inicio da primeira palavra
+    if (a->selected_word && a->selected_word->is_placed) {
+        a->grid->ai = a->selected_word->pos_final_i;
+        a->grid->aj = a->selected_word->pos_final_j;
+    }
 
     a->grid->font = TTF_OpenFont(GAME_OVER_TTFF, a->grid->font_size);
     if (a->grid->font == NULL) {
@@ -176,7 +187,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
     SDL_Color SDL_BLACK = { 0, 0, 0, 255 };
     for(int i = 0; i < 26; i++) {
         char letter_str[2] = { (char)('A' + i), '\0' };
-        SDL_Surface* surface = TTF_RenderText_Solid(a->grid->font, letter_str, strlen(letter_str), SDL_BLACK);
+        SDL_Surface* surface = TTF_RenderText_Blended(a->grid->font, letter_str, strlen(letter_str), SDL_BLACK);
         if (surface) {
             a->grid->letter_textures_cache[i] = SDL_CreateTextureFromSurface(a->renderer, surface);
             SDL_DestroySurface(surface);
@@ -200,8 +211,55 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     a->prev_pad = a->pad;
 
     // --- LOGICA DE CONTROLES
+    // --- LÓGICA DE CONTROLES ---
     readButtonState(&a->pad, 1);
-    if (a->pad.Buttons & PSP_CTRL_START)  return SDL_APP_SUCCESS;    // Se o botão START for pressionado, fecha o aplicativo
+    if (a->pad.Buttons & PSP_CTRL_START) return SDL_APP_SUCCESS;
+
+    if (a->selection_mode == WORD_MODE) {
+        // --- CONTROLES DO MODO PALAVRA ---
+        int d_row = 0, d_col = 0;
+        if ((a->pad.Buttons & PSP_CTRL_UP) && !(a->prev_pad.Buttons & PSP_CTRL_UP)) d_row = -1;
+        if ((a->pad.Buttons & PSP_CTRL_DOWN) && !(a->prev_pad.Buttons & PSP_CTRL_DOWN)) d_row = 1;
+        if ((a->pad.Buttons & PSP_CTRL_LEFT) && !(a->prev_pad.Buttons & PSP_CTRL_LEFT)) d_col = -1;
+        if ((a->pad.Buttons & PSP_CTRL_RIGHT) && !(a->prev_pad.Buttons & PSP_CTRL_RIGHT)) d_col = 1;
+        
+        if (d_row != 0 || d_col != 0) {
+            navigateInWordMode(a, d_row, d_col); // <- CHAMADA DA NOVA FUNÇÃO!
+        }
+
+        // Entra no Modo Letra
+        if ((a->pad.Buttons & PSP_CTRL_CROSS) && !(a->prev_pad.Buttons & PSP_CTRL_CROSS)) {
+            a->selection_mode = LETTER_MODE;
+            if (a->selected_word) a->active_orientation = a->selected_word->orientation;
+        }
+
+    } else { // LETTER_MODE
+        // --- CONTROLES DO MODO LETRA ---
+        int d_row = 0, d_col = 0;
+        if ((a->pad.Buttons & PSP_CTRL_UP) && !(a->prev_pad.Buttons & PSP_CTRL_UP)) d_row = -1;
+        if ((a->pad.Buttons & PSP_CTRL_DOWN) && !(a->prev_pad.Buttons & PSP_CTRL_DOWN)) d_row = 1;
+        if ((a->pad.Buttons & PSP_CTRL_RIGHT) && !(a->prev_pad.Buttons & PSP_CTRL_RIGHT)) d_col = 1;
+        if ((a->pad.Buttons & PSP_CTRL_LEFT) && !(a->prev_pad.Buttons & PSP_CTRL_LEFT)) d_col = -1;
+    
+        moveGridSelection(a->grid, a->selected_word, d_row, d_col);
+        
+        if ((a->pad.Buttons & PSP_CTRL_CROSS) && !(a->prev_pad.Buttons & PSP_CTRL_CROSS)) {
+            moveCellLetterSelection(a->grid);
+        }
+
+        // Troca a orientação de escrita na interseção (botão círculo)
+        if ((a->pad.Buttons & PSP_CTRL_CIRCLE) && !(a->prev_pad.Buttons & PSP_CTRL_CIRCLE)) {
+            a->active_orientation = (a->active_orientation == HORIZONTAL) ? VERTICAL : HORIZONTAL;
+            // Troca a palavra selecionada se houver uma na nova orientação
+            Word* other_word = findWordAt(a->grid->ai, a->grid->aj, words, words_count, a->active_orientation);
+            if (other_word) a->selected_word = other_word;
+        }
+
+        // Volta para o Modo Palavra (botão triângulo)
+        if ((a->pad.Buttons & PSP_CTRL_TRIANGLE) && !(a->prev_pad.Buttons & PSP_CTRL_TRIANGLE)) {
+            a->selection_mode = WORD_MODE;
+        }
+    }
 
     // --- ATUALIZAÇÃO DE ESTADO ---
     updateCurrentHint(a);
@@ -210,35 +268,15 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 
     SDL_SetRenderDrawColor(a->renderer, 0, 0, 0, 255);
     SDL_RenderClear(a->renderer);
-
     SDL_RenderTexture(a->renderer, a->background_texture, NULL, NULL);
-
-    // Draw Text
-    // drawTextWithFont("Hello PSP!", 5, 5, a->font, a->renderer, SDL_WHITE);
-    // Draw Rect
-    // drawRect(30, 50, 30, 30, a->renderer, 255, 255, 255, 255, "filled");
     // Draw Grid
-    drawGrid(a->grid, a->renderer);
-    // Draw debug
-    //drawTextWithFont("font: ", 0, 0, a->font, a->renderer, (SDL_Color){ 0, 0, 0, 255});
-
+    drawGrid(a->grid, a->renderer, a->selection_mode, a->selected_word);
     // Draw Hint
     float x = (WINDOW_WIDTH / 2) + 20;
     float y = 10;
     float rectW = (WINDOW_WIDTH / 2) - 50;
-    float rectH = WINDOW_HEIGHT - 15;
+    float rectH = (WINDOW_HEIGHT / 2 ) - 15;
     if (a->current_hint) drawHint(a->current_hint, x, y, rectW, rectH, a->hint_font, a->renderer);
-
-    // cross -> select letter
-    if ((a->pad.Buttons & PSP_CTRL_CROSS) && !(a->prev_pad.Buttons & PSP_CTRL_CROSS)) moveCellLetterSelection(a->grid);
-    // cima
-    if ((a->pad.Buttons & PSP_CTRL_UP) && !(a->prev_pad.Buttons & PSP_CTRL_UP)) moveGridSelection(a->grid, -1, 0);
-    // baixo
-    if ((a->pad.Buttons & PSP_CTRL_DOWN) && !(a->prev_pad.Buttons & PSP_CTRL_DOWN)) moveGridSelection(a->grid, 1, 0);
-    // direita
-    if ((a->pad.Buttons & PSP_CTRL_RIGHT) && !(a->prev_pad.Buttons & PSP_CTRL_RIGHT)) moveGridSelection(a->grid, 0, 1);
-    // esquerda
-    if ((a->pad.Buttons & PSP_CTRL_LEFT) && !(a->prev_pad.Buttons & PSP_CTRL_LEFT)) moveGridSelection(a->grid, 0, -1);
 
     SDL_RenderPresent(a->renderer); // Mostra na tela tudo o que foi desenhado    
     return SDL_APP_CONTINUE;
@@ -274,4 +312,55 @@ void SDL_AppQuit(void *appstate, SDL_AppResult result)
     cleanup_native_audio();
 	SDL_free(a);
 	SDL_Quit();
+}
+
+void navigateInWordMode(app_t* a, int d_row, int d_col) {
+    if (!a || !a->selected_word) return;
+
+    // Tenta primeiro trocar para uma palavra que cruza na posição atual
+    if ((d_row != 0 && a->selected_word->orientation == HORIZONTAL) || 
+        (d_col != 0 && a->selected_word->orientation == VERTICAL)) {
+        
+        WordOrientation target_orientation = (a->selected_word->orientation == HORIZONTAL) ? VERTICAL : HORIZONTAL;
+        Word* intersecting_word = findWordAt(a->grid->ai, a->grid->aj, words, words_count, target_orientation);
+
+        if (intersecting_word) {
+            a->selected_word = intersecting_word;
+            a->active_orientation = intersecting_word->orientation;
+            // O cursor (ai, aj) já está na interseção, então não precisa mover.
+            return;
+        }
+    }
+
+    // Se não houver cruzamento, pula para a próxima palavra na mesma orientação
+    Word* potential_next_words[words_count];
+    int count = 0;
+    int current_word_index = -1;
+
+    // 1. Encontra todas as palavras com a mesma orientação da palavra atual
+    for (int i = 0; i < words_count; i++) {
+        if (words[i].is_placed && words[i].orientation == a->selected_word->orientation) {
+            if (&words[i] == a->selected_word) {
+                current_word_index = count;
+            }
+            potential_next_words[count] = &words[i];
+            count++;
+        }
+    }
+
+    if (count <= 1) return; // Nenhuma outra palavra para pular
+
+    // 2. Calcula o novo índice
+    int next_index = current_word_index;
+    if (d_row > 0 || d_col > 0) { // DOWN ou RIGHT
+        next_index = (current_word_index + 1) % count;
+    } else if (d_row < 0 || d_col < 0) { // UP ou LEFT
+        next_index = (current_word_index - 1 + count) % count;
+    }
+
+    // 3. Atualiza o estado do jogo com a nova palavra selecionada
+    a->selected_word = potential_next_words[next_index];
+    a->grid->ai = a->selected_word->pos_final_i;
+    a->grid->aj = a->selected_word->pos_final_j;
+    a->active_orientation = a->selected_word->orientation;
 }

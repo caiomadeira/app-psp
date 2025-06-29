@@ -36,17 +36,26 @@ GridArea* newGridArea(int x, int y, int w, int h, int padding) {
 
 // d_row = pode ser -1 (cima), 1 (baixo) ou 0 eh o deslocamento
 // d_col pode ser -1 (esqueda), 1 (direita) ou 0
-void moveGridSelection(Grid* grid, int d_row, int d_col) {
-    if (grid == NULL) return;
-    int new_row = grid->ai + d_row;
-    int new_col = grid->aj + d_col;
+// O d de d_row e d_col eh relativo ao D-PAD do PSP
+void moveGridSelection(Grid* grid, Word* active_word, int d_row, int d_col) {
+    if (grid == NULL || active_word == NULL) return;
 
+    int new_row = grid->ai;
+    int new_col = grid->aj;
+    int len = strlen(active_word->word);
     // aqui eu sou verifico os limites pra 1. linha e 2. coluna
-    if (new_row >= 0 && new_row < grid->nrow) 
-        grid->ai = new_row;
-
-    if (new_col >= 0 && new_col < grid->ncol)
-        grid->aj = new_col;
+    // apenas movimenta na direcao da orientacao da palavra
+    if (active_word->orientation == HORIZONTAL && d_col != 0) {
+        new_col += d_col;
+        if (new_col >= active_word->pos_final_j && new_col < active_word->pos_final_j + len) {
+            grid->aj = new_col;
+        }
+    } else if (active_word->orientation == VERTICAL && d_row != 0) {
+        new_row += d_row;
+        if (new_row >= active_word->pos_final_i && new_row < active_word->pos_final_i + len) {
+            grid->ai = new_row;
+        }
+    }
 }
 
 Grid* newGrid(int nrow, int ncol, GridArea* gridArea) {

@@ -15,6 +15,7 @@
 #include <unistd.h> // Necessário para a função chdir()
 #include <string.h> // Necessário para a função strrchr()
 #include <ctype.h>
+#include <stddef.h> // para o NULL
 
 // -------------------------
 // PSP

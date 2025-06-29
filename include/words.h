@@ -4,6 +4,11 @@
 #include "common.h"
 
 typedef enum {
+    WORD_MODE,
+    LETTER_MODE,
+} SelectionMode;
+
+typedef enum {
     HORIZONTAL,
     VERTICAL
 } WordOrientation;
@@ -21,6 +26,9 @@ typedef struct {
     int pos_final_j;
     WordOrientation orientation;
 } Word;
+
+extern Word words[];
+extern int words_count;
 
 Word* findWordAt(int r, int c, Word words[], int word_count, WordOrientation orientation);
 Word* newWord(int index, char* hint, char* word);

@@ -52,7 +52,7 @@ void printGrid(Grid* grid, int size);
 Cell* newCell(int x, int y, int w, int h, char letter);
 Grid* newGrid(int nrow, int ncol, GridArea* gridArea);
 GridArea* newGridArea(int x, int y, int w, int h, int padding);
-void moveGridSelection(Grid* grid, int d_row, int d_col);
+void moveGridSelection(Grid* grid, Word* active_word, int d_row, int d_col);
 void moveCellLetterSelection(Grid* grid);
 char* init_letters(int start, int end);
 void populateGridWithWords(Grid* grid, Word words[], int word_count);
