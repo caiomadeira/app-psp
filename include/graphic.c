@@ -52,20 +52,26 @@ void drawGrid(Grid* grid, SDL_Renderer* renderer) {
 
             if (i == grid->ai && j == grid->aj) rectBackgroundColor = (SDL_Color){ 255, 255, 0, 255 };
             else rectBackgroundColor = (SDL_Color){ 255, 255, 255, 255 };
+            
+            drawRect(cell->x, cell->y, cell->w, cell->h, renderer, rectBackgroundColor.r, rectBackgroundColor.g, rectBackgroundColor.b, rectBackgroundColor.a, "filled");
+            drawRect(cell->x, cell->y, cell->w, cell->h, renderer, rectBorderColor.r, rectBorderColor.g, rectBorderColor.b, rectBorderColor.a, "border");
+            
+           char current_letter = cell->current_letter;
+           if (current_letter >= 'A' && current_letter <= 'Z') {
+                int texture_index = current_letter - 'A';
+                SDL_Texture* letter_texture = grid->letter_textures_cache[texture_index];
+                if (letter_texture != NULL) {
+                    SDL_FRect dest_rect;
+                    dest_rect.x = cell->x;
+                    dest_rect.y = cell->y;
 
-            if (cell != NULL) {
-                drawRect(cell->x, cell->y, cell->w, cell->h, renderer, rectBackgroundColor.r, rectBackgroundColor.g, rectBackgroundColor.b, rectBackgroundColor.a, "filled");
-                drawRect(cell->x, cell->y, cell->w, cell->h, renderer, rectBorderColor.r, rectBorderColor.g, rectBorderColor.b, rectBorderColor.a, "border");
-                // // Convert char to str to be accept in drawTextWithFont function
-                char charToStr[2];
-                charToStr[0] = cell->current_letter;
-                charToStr[1] = '\0';
+                    SDL_GetTextureSize(letter_texture, &dest_rect.w, &dest_rect.h); // antes era SDL_GetTextureSize
 
-                if (charToStr[0] == '\0') continue;
-
-                SDL_Color SDL_BLACK = { 0, 0, 0, 255 };
-                drawTextWithFont(charToStr, cell->x + 4, cell->y - 4, grid->font, renderer, SDL_BLACK);
-            }
+                    dest_rect.x = cell->x + (cell->w - dest_rect.w) / 2.0f;
+                    dest_rect.y = cell->y + (cell->h - dest_rect.h) / 2.0f;
+                    SDL_RenderTexture(renderer, letter_texture, NULL, &dest_rect);
+                }
+           }
         }
     }
 }

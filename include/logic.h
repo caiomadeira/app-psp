@@ -41,6 +41,7 @@ typedef struct {
     TTF_Font* font;
     int font_size;
     SDL_Color font_color;
+    SDL_Texture* letter_textures_cache[26];
 } Grid;
 
 void print1d(char *v, int size);

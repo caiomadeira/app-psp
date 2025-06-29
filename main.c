@@ -114,22 +114,24 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
-    // //char letter = 'A';
-    // for(int i = 0; i < a->grid->nrow; i++) {
-    //     for(int j = 0; j < a->grid->ncol; j++) {
-    //             a->grid->list_cells[i][j].current_letter = 'A';
-    //             // if (letter >= 'A' && letter <= 'Z') {
-    //             //     a->grid->list_cells[i]->current_letter = letter++;
-    //             // } else {
-    //             //     letter = 'A';
-    //             // }
-    //     }
-    // }
 
     a->grid->font = TTF_OpenFont(GAME_OVER_TTFF, a->grid->font_size);
     if (a->grid->font == NULL) {
         printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
+    }
+
+    /* LETTERS PRE-RENDERIZATION */
+    SDL_Color SDL_BLACK = { 0, 0, 0, 255 };
+    for(int i = 0; i < 26; i++) {
+        char letter_str[2] = { (char)('A' + i), '\0' };
+        SDL_Surface* surface = TTF_RenderText_Solid(a->grid->font, letter_str, strlen(letter_str), SDL_BLACK);
+        if (surface) {
+            a->grid->letter_textures_cache[i] = SDL_CreateTextureFromSurface(a->renderer, surface);
+            SDL_DestroySurface(surface);
+        } else {
+            a->grid->letter_textures_cache[i] = NULL;
+        }
     }
 
 	*appstate = (void *)a;
@@ -213,6 +215,13 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 void SDL_AppQuit(void *appstate, SDL_AppResult result)
 {
 	app_t *a = (app_t *)appstate;
+    // free letter texture cache
+    for(int i = 0; i < 26; i++) {
+        if (a->grid->letter_textures_cache[i] != NULL) {
+            SDL_DestroyTexture(a->grid->letter_textures_cache[i]);
+        }
+    }
+
 	SDL_DestroyWindow(a->window);
     cleanup_native_audio();
 	SDL_free(a);
