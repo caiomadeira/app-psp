@@ -114,25 +114,23 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
-    //char letter = 'A';
-    for(int i = 0; i < a->grid->nrow * a->grid->ncol; i++) {
-        if (a->grid->list_cells[i] != NULL) {
-            a->grid->list_cells[i]->current_letter = 'A';
-            // if (letter >= 'A' && letter <= 'Z') {
-            //     a->grid->list_cells[i]->current_letter = letter++;
-            // } else {
-            //     letter = 'A';
-            // }
-        }
-    }
+    // //char letter = 'A';
+    // for(int i = 0; i < a->grid->nrow; i++) {
+    //     for(int j = 0; j < a->grid->ncol; j++) {
+    //             a->grid->list_cells[i][j].current_letter = 'A';
+    //             // if (letter >= 'A' && letter <= 'Z') {
+    //             //     a->grid->list_cells[i]->current_letter = letter++;
+    //             // } else {
+    //             //     letter = 'A';
+    //             // }
+    //     }
+    // }
 
-    a->grid->font_size = 60;
     a->grid->font = TTF_OpenFont(GAME_OVER_TTFF, a->grid->font_size);
     if (a->grid->font == NULL) {
         printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
-
 
 	*appstate = (void *)a;
 	return SDL_APP_CONTINUE;
@@ -147,16 +145,10 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 {
     app_t *a = (app_t *)appstate;
     a->prev_pad = a->pad;
-
     // --- LOGICA DE CONTROLES
     readButtonState(&a->pad, 1);
     if (a->pad.Buttons & PSP_CTRL_START)  return SDL_APP_SUCCESS;    // Se o botão START for pressionado, fecha o aplicativo
     
-    
-    if ((a->pad.Buttons & PSP_CTRL_CROSS) && !(a->prev_pad.Buttons & PSP_CTRL_CROSS)) {
-        trigger_native_sound();
-    }
-
     // ----------------------------------------------------
     // --- LÓGICA DE RENDERIZAÇÃO ---
 
@@ -173,6 +165,33 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     drawGrid(a->grid, a->renderer);
     // Draw debug
     //drawTextWithFont("font: ", 0, 0, a->font, a->renderer, (SDL_Color){ 0, 0, 0, 255});
+
+    if ((a->pad.Buttons & PSP_CTRL_CROSS) && !(a->prev_pad.Buttons & PSP_CTRL_CROSS)) {
+        moveCellLetterSelection(a->grid);
+        //updateCellLetterDraw(a->grid, a->renderer);
+        //drawTextWithFont("font: ", 0, 0, a->font, a->renderer, (SDL_Color){ 0, 0, 0, 255});
+    }
+
+    // cima
+    if ((a->pad.Buttons & PSP_CTRL_UP) && !(a->prev_pad.Buttons & PSP_CTRL_UP)) {
+        moveGridSelection(a->grid, -1, 0);
+    }
+    // baixo
+    if ((a->pad.Buttons & PSP_CTRL_DOWN) && !(a->prev_pad.Buttons & PSP_CTRL_DOWN)) {
+        moveGridSelection(a->grid, 1, 0);
+    }
+    // direita
+    if ((a->pad.Buttons & PSP_CTRL_RIGHT) && !(a->prev_pad.Buttons & PSP_CTRL_RIGHT)) {
+        moveGridSelection(a->grid, 0, 1);
+    }
+    // esquerda
+    if ((a->pad.Buttons & PSP_CTRL_LEFT) && !(a->prev_pad.Buttons & PSP_CTRL_LEFT)) {
+        moveGridSelection(a->grid, 0, -1);
+    }
+
+    if ((a->pad.Buttons & PSP_CTRL_LEFT) && !(a->prev_pad.Buttons & PSP_CTRL_LEFT)) {
+        moveGridSelection(a->grid, 0, -1);
+    }
 
     SDL_RenderPresent(a->renderer); // Mostra na tela tudo o que foi desenhado    
     return SDL_APP_CONTINUE;

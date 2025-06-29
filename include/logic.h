@@ -21,7 +21,6 @@ typedef struct {
     float w;
     float h;
     char current_letter;
-    bool is_selected;
 } Cell;
 
 typedef struct {
@@ -34,6 +33,8 @@ typedef struct {
 
 typedef struct {
     Cell** list_cells;
+    int ai; // selected row
+    int aj; // selected col
     int nrow;
     int ncol;
     GridArea* gridArea;
@@ -47,6 +48,8 @@ void printGrid(Grid* grid, int size);
 Cell* newCell(int x, int y, int w, int h, char letter);
 Grid* newGrid(int nrow, int ncol, GridArea* gridArea);
 GridArea* newGridArea(int x, int y, int w, int h, int padding);
+void moveGridSelection(Grid* grid, int d_row, int d_col);
+void moveCellLetterSelection(Grid* grid);
 char* init_letters(int start, int end);
 
 #endif
