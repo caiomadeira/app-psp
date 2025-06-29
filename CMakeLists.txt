@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(APPPSP)
+project(RositasCrossword)
 
 add_executable(${PROJECT_NAME} 
     main.c
@@ -100,6 +100,6 @@ if(PSP)
 		ICON_PATH NULL
 		BACKGROUND_PATH NULL
 		PREVIEW_PATH NULL
-		TITLE ${PROJECT_NAME}
+		TITLE "${PROJECT_NAME}"
 	)
 endif()

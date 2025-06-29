@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/caiomadeira/Desktop/app-psp/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/APPPSP.dir/all
+all: CMakeFiles/RositasCrossword.dir/all
 all: CMakeFiles/copy_assets.dir/all
 .PHONY : all
 
@@ -72,35 +72,35 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/APPPSP.dir/clean
+clean: CMakeFiles/RositasCrossword.dir/clean
 clean: CMakeFiles/copy_assets.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/APPPSP.dir
+# Target rules for target CMakeFiles/RositasCrossword.dir
 
 # All Build rule for target.
-CMakeFiles/APPPSP.dir/all: CMakeFiles/copy_assets.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target APPPSP"
-.PHONY : CMakeFiles/APPPSP.dir/all
+CMakeFiles/RositasCrossword.dir/all: CMakeFiles/copy_assets.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target RositasCrossword"
+.PHONY : CMakeFiles/RositasCrossword.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/APPPSP.dir/rule: cmake_check_build_system
+CMakeFiles/RositasCrossword.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/APPPSP.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/RositasCrossword.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caiomadeira/Desktop/app-psp/build/CMakeFiles 0
-.PHONY : CMakeFiles/APPPSP.dir/rule
+.PHONY : CMakeFiles/RositasCrossword.dir/rule
 
 # Convenience name for target.
-APPPSP: CMakeFiles/APPPSP.dir/rule
-.PHONY : APPPSP
+RositasCrossword: CMakeFiles/RositasCrossword.dir/rule
+.PHONY : RositasCrossword
 
 # clean rule for target.
-CMakeFiles/APPPSP.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/clean
-.PHONY : CMakeFiles/APPPSP.dir/clean
+CMakeFiles/RositasCrossword.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/clean
+.PHONY : CMakeFiles/RositasCrossword.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/copy_assets.dir

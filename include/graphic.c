@@ -41,12 +41,34 @@ int drawRect(float x, float y, float w, float h, SDL_Renderer *renderer, int r, 
     return 0;
 }
 
-void drawGrid(Grid* grid, SDL_Renderer* renderer)
-{    
+void drawGrid(Grid* grid, SDL_Renderer* renderer) {
     if (grid == NULL) return;
+    SDL_Color rectBorderColor = { 0, 0, 0, 255 };
+    SDL_Color rectLetterColor = { 0, 0, 0, 255 };
+
+    if (grid->nrow > 0 && grid->ncol > 0)
+        grid->list_cells[0][0].is_selected = true;
+
     for(int i = 0; i < grid->nrow*grid->ncol; i++) {
         Cell* cell = grid->list_cells[i];
-        if (cell != NULL)
-            drawRect(cell->x, cell->y, cell->w - 2, cell->h - 2, renderer, 255, 255, 255, 255, "filled");
+        if (cell != NULL) {
+            SDL_Color rectBackgroundColor;
+            if (cell->is_selected == true) {
+                rectBackgroundColor = (SDL_Color){ 255, 255, 0, 255 };
+            } else {
+                rectBackgroundColor = (SDL_Color){ 255, 255, 255, 255 };
+            }
+
+            drawRect(cell->x, cell->y, cell->w, cell->h, renderer, rectBackgroundColor.r, rectBackgroundColor.g, rectBackgroundColor.b, rectBackgroundColor.a, "filled");
+            drawRect(cell->x, cell->y, cell->w, cell->h, renderer, rectBorderColor.r, rectBorderColor.g, rectBorderColor.b, rectBorderColor.a, "border");
+            char charToStr[2];
+            charToStr[0] = cell->current_letter;
+            charToStr[1] = '\0';
+
+            if (charToStr[0] == '\0') continue;
+
+            SDL_Color SDL_BLACK = { 0, 0, 0, 255 };
+            drawTextWithFont(charToStr, cell->x + 2, cell->y - 8, grid->font, renderer, rectLetterColor);
+        }
     }
 }

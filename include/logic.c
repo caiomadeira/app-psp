@@ -1,6 +1,5 @@
 #include "logic.h"
 
-
 void printGrid(Grid* grid, int size) {
     printf("=========== Grid Layout ==============\n");
     for(int i = 0; i < grid->nrow * grid->ncol; i++) {

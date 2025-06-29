@@ -117,17 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named APPPSP
+# Target rules for targets named RositasCrossword
 
 # Build rule for target.
-APPPSP: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 APPPSP
-.PHONY : APPPSP
+RositasCrossword: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 RositasCrossword
+.PHONY : RositasCrossword
 
 # fast build rule for target.
-APPPSP/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/build
-.PHONY : APPPSP/fast
+RositasCrossword/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/build
+.PHONY : RositasCrossword/fast
 
 #=============================================================================
 # Target rules for targets named copy_assets
@@ -147,7 +147,7 @@ include/audio.obj: include/audio.c.obj
 
 # target to build an object file
 include/audio.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/audio.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/audio.c.obj
 .PHONY : include/audio.c.obj
 
 include/audio.i: include/audio.c.i
@@ -155,7 +155,7 @@ include/audio.i: include/audio.c.i
 
 # target to preprocess a source file
 include/audio.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/audio.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/audio.c.i
 .PHONY : include/audio.c.i
 
 include/audio.s: include/audio.c.s
@@ -163,7 +163,7 @@ include/audio.s: include/audio.c.s
 
 # target to generate assembly for a file
 include/audio.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/audio.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/audio.c.s
 .PHONY : include/audio.c.s
 
 include/common.obj: include/common.c.obj
@@ -171,7 +171,7 @@ include/common.obj: include/common.c.obj
 
 # target to build an object file
 include/common.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/common.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/common.c.obj
 .PHONY : include/common.c.obj
 
 include/common.i: include/common.c.i
@@ -179,7 +179,7 @@ include/common.i: include/common.c.i
 
 # target to preprocess a source file
 include/common.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/common.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/common.c.i
 .PHONY : include/common.c.i
 
 include/common.s: include/common.c.s
@@ -187,7 +187,7 @@ include/common.s: include/common.c.s
 
 # target to generate assembly for a file
 include/common.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/common.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/common.c.s
 .PHONY : include/common.c.s
 
 include/graphic.obj: include/graphic.c.obj
@@ -195,7 +195,7 @@ include/graphic.obj: include/graphic.c.obj
 
 # target to build an object file
 include/graphic.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/graphic.c.obj
 .PHONY : include/graphic.c.obj
 
 include/graphic.i: include/graphic.c.i
@@ -203,7 +203,7 @@ include/graphic.i: include/graphic.c.i
 
 # target to preprocess a source file
 include/graphic.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/graphic.c.i
 .PHONY : include/graphic.c.i
 
 include/graphic.s: include/graphic.c.s
@@ -211,7 +211,7 @@ include/graphic.s: include/graphic.c.s
 
 # target to generate assembly for a file
 include/graphic.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/graphic.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/graphic.c.s
 .PHONY : include/graphic.c.s
 
 include/logic.obj: include/logic.c.obj
@@ -219,7 +219,7 @@ include/logic.obj: include/logic.c.obj
 
 # target to build an object file
 include/logic.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/logic.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/logic.c.obj
 .PHONY : include/logic.c.obj
 
 include/logic.i: include/logic.c.i
@@ -227,7 +227,7 @@ include/logic.i: include/logic.c.i
 
 # target to preprocess a source file
 include/logic.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/logic.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/logic.c.i
 .PHONY : include/logic.c.i
 
 include/logic.s: include/logic.c.s
@@ -235,7 +235,7 @@ include/logic.s: include/logic.c.s
 
 # target to generate assembly for a file
 include/logic.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/logic.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/logic.c.s
 .PHONY : include/logic.c.s
 
 include/player.obj: include/player.c.obj
@@ -243,7 +243,7 @@ include/player.obj: include/player.c.obj
 
 # target to build an object file
 include/player.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/player.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/player.c.obj
 .PHONY : include/player.c.obj
 
 include/player.i: include/player.c.i
@@ -251,7 +251,7 @@ include/player.i: include/player.c.i
 
 # target to preprocess a source file
 include/player.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/player.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/player.c.i
 .PHONY : include/player.c.i
 
 include/player.s: include/player.c.s
@@ -259,7 +259,7 @@ include/player.s: include/player.c.s
 
 # target to generate assembly for a file
 include/player.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/include/player.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/player.c.s
 .PHONY : include/player.c.s
 
 main.obj: main.c.obj
@@ -267,7 +267,7 @@ main.obj: main.c.obj
 
 # target to build an object file
 main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/main.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -275,7 +275,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -283,7 +283,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/APPPSP.dir/build.make CMakeFiles/APPPSP.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -295,7 +295,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... copy_assets"
-	@echo "... APPPSP"
+	@echo "... RositasCrossword"
 	@echo "... include/audio.obj"
 	@echo "... include/audio.i"
 	@echo "... include/audio.s"

@@ -53,6 +53,7 @@ typedef enum {
 #define INIT_OPEN_GL_WINDOW false
 
 #define ROAST_CHICKEN_TTF "font/roasted-chicken.ttf"
+#define GAME_OVER_TTFF "font/game_over.ttf"
 #define TEST_WAV "audio/test.wav"
 #define BACKGROUND_PNG "img/background.png"
 

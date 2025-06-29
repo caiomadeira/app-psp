@@ -70,7 +70,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         return SDL_APP_FAILURE;
     }
 
-    a->font = TTF_OpenFont(ROAST_CHICKEN_TTF, 20);
+    a->font = TTF_OpenFont(GAME_OVER_TTFF, 80);
     if (a->font == NULL) {
         printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
@@ -114,6 +114,25 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
+    //char letter = 'A';
+    for(int i = 0; i < a->grid->nrow * a->grid->ncol; i++) {
+        if (a->grid->list_cells[i] != NULL) {
+            a->grid->list_cells[i]->current_letter = 'A';
+            // if (letter >= 'A' && letter <= 'Z') {
+            //     a->grid->list_cells[i]->current_letter = letter++;
+            // } else {
+            //     letter = 'A';
+            // }
+        }
+    }
+
+    a->grid->font_size = 60;
+    a->grid->font = TTF_OpenFont(GAME_OVER_TTFF, a->grid->font_size);
+    if (a->grid->font == NULL) {
+        printDebug(SDL_GetError(), 5000);
+        return SDL_APP_FAILURE;
+    }
+
 
 	*appstate = (void *)a;
 	return SDL_APP_CONTINUE;
@@ -147,11 +166,13 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     SDL_RenderTexture(a->renderer, a->background_texture, NULL, NULL);
 
     // Draw Text
-    drawTextWithFont("Hello PSP!", 5, 5, a->font, a->renderer, SDL_WHITE);
+    // drawTextWithFont("Hello PSP!", 5, 5, a->font, a->renderer, SDL_WHITE);
     // Draw Rect
     // drawRect(30, 50, 30, 30, a->renderer, 255, 255, 255, 255, "filled");
     // Draw Grid
     drawGrid(a->grid, a->renderer);
+    // Draw debug
+    //drawTextWithFont("font: ", 0, 0, a->font, a->renderer, (SDL_Color){ 0, 0, 0, 255});
 
     SDL_RenderPresent(a->renderer); // Mostra na tela tudo o que foi desenhado    
     return SDL_APP_CONTINUE;

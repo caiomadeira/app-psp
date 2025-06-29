@@ -1,6 +1,7 @@
 #ifndef LOGIC_H
 #define LOGIC_H
 
+#include "common.h"
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -20,6 +21,7 @@ typedef struct {
     float w;
     float h;
     char current_letter;
+    bool is_selected;
 } Cell;
 
 typedef struct {
@@ -35,6 +37,9 @@ typedef struct {
     int nrow;
     int ncol;
     GridArea* gridArea;
+    TTF_Font* font;
+    int font_size;
+    SDL_Color font_color;
 } Grid;
 
 void print1d(char *v, int size);
