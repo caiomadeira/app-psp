@@ -43,7 +43,7 @@ typedef struct {
     int font_size;
     SDL_Color font_color;
     SDL_Texture* letter_textures_cache[26];
-    Word* words;
+    Word** words;
     int total_words;
 } Grid;
 
@@ -56,5 +56,7 @@ void moveGridSelection(Grid* grid, int d_row, int d_col);
 void moveCellLetterSelection(Grid* grid);
 char* init_letters(int start, int end);
 void populateGridWithWords(Grid* grid, Word words[], int word_count);
+bool canPlaceWordAt(Grid* grid, const char* word, int row, int col, WordOrientation orientation);
+bool placeWord(Grid* grid, Word* selected_word);
 
 #endif
