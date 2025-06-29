@@ -1,4 +1,5 @@
 #include "logic.h"
+#include<time.h>
 
 void printGrid(Grid* grid, int size) {
     printf("=========== Grid Layout ==============\n");
@@ -92,20 +93,25 @@ Grid* newGrid(int nrow, int ncol, GridArea* gridArea) {
             cell->current_letter = ' ';
         }
     }
+
+    grid->total_words = 5; // TODO: Pensar em algum calculo pra definir quantas palavras cabem a partir do mxn da matriz
+    grid->words = (Word**)malloc(grid->total_words*sizeof(Word*));
+    if (grid->words == NULL) return NULL;
+
+    // define o tamanho maximo que uma palavra pode alcançar baseado na maior dimensao da matriz
+    int max_word_len = 0;
+    if (grid->ncol > grid->nrow) {
+        max_word_len = grid->ncol;
+    } else {
+        max_word_len = grid->nrow
+    }
+
+    for(int i = 0; i < max_word_len; i++) {
+        grid->words[i] = NULL; // inicializo todas as palavras com null
+    }
+
     return grid;
 }
-
-// void moveCellLetterSelection(Grid* grid) {
-//     for(int i = 0; i < grid->nrow; i++) {
-//         for(int j = 0; j < grid->ncol; j++) {
-//             char current_letter = grid->list_cells[i][j].current_letter;
-//             if (current_letter >= 'A' && current_letter <= 'Z') 
-//                 current_letter++;
-//             else
-//                 current_letter = 'A';
-//         }
-//     }
-// }
 
 void moveCellLetterSelection(Grid* grid) {
     if (grid == NULL) return;
@@ -119,9 +125,7 @@ void moveCellLetterSelection(Grid* grid) {
 }
 
 void print1d(char *v, int size) {
-    for(int i = 0; i < size; i++) {
-        printf("%c, ", v[i]);
-    }
+    for(int i = 0; i < size; i++) printf("%c, ", v[i]);
     printf("\n");
 }
 
@@ -141,3 +145,114 @@ char* init_letters(int start, int end) {
     }
     return NULL;
 }
+
+void populateGridWithWords(Grid* grid, Word words[], int word_count Word) {
+    if (grid == NULL || words == NULL) return;
+
+    for(int r = 0; r < grid->nrow; r++) {
+        for(int c = 0; c < grid->ncol; c++) {
+            grid->list_cells[r][c].current_letter = '\0'; // iniciando todas as celulas com caractere nulo
+        }
+    }
+    bool word_end_pos_defined = false;
+
+    // aqui estou iterando sobre cada palavra no banco
+    for(int i = 0; i < word_count; i++) {
+        Word* current_word = &words[i]; // banco de palavras
+        int word_len = strlen(current_word->word);
+        
+        // verifica se a palavra é maior que 2
+        if (word_len > 2) {
+            // verificando se esta dentro do grid da grade w definindo a orientação
+            // verifica se o tamanho da palavra é menor ou igual ao numero de COLUNAS
+            if (word_len <= grid->ncol) {
+                current_word->orientation = HORIZONTAL;
+
+                // checa se essa é a primeira palavra a ser adicionada.
+                if (grid->words[0] == NULL) {
+
+                    // se essa é a primeira palavra entao temos mais opções pra adicionar onde quisermos na matriz
+                    /*
+                    Vamos gerar uma primeira posição aleatoria.
+                    É importante notar que ela nao pode ser sempre muito aleatoria.
+                    Quando eu escolher uma posicao pra primeira letra, as outras devem caber no resto da row ou coluna subsequente
+                    de modo que não ultrapasse os limites da grade
+                    */
+                   if (word_end_pos_defined == false) {
+                        goto define_end_pos;
+                   } 
+
+                    define_end_pos:
+                        srand(time(NULL));
+                        int r = rand() % (grid->nrow * grid->ncol); // numero alterorio entre 0 e grid->nrow * grid->ncol
+                        current_word->start = r;
+                        current_word->end = word_len - current_word->start;
+                        if ((current_word->end < grid->nrow && current_word->end < grid->ncol)) {
+                            word_end_pos_defined = true;
+                        }
+                    
+                    if (word_end_pos_defined) {
+                        for(int k = 0; k < word_len; k++) {
+                            // se a palavra foi definida como tendo orientação horizontal
+                            if (current_word->orientation == HORIZONTAL) {
+                                current_word->start += k; // o indice i de aij eh incrimentado
+                            } else {
+                                start_row += k; // se nao o j eh incrementado
+                            }
+
+                            // por fim verifico se a celula de destino esta dentro dos limites da grade
+                            if (start_row < grid->nrow && start_col < grid->ncol) {
+                                grid->list_cells[start_row][start_col].current_letter = toupper(current_word->word[k]); // coloco em minuscula p/ evitar problemas
+                            }
+                        }
+                    }
+
+
+                //    for(int j = 0; j < grid->nrow; j++) {
+                //         for(int k = 0; k < grid->ncol; k++) {
+                            
+                //         }
+                //    }
+                }
+            } 
+            // verifica se o tamanho da palavra é menor ou igual ao numero de LINHAS
+            else if (word_len >= grid->nrow) {
+
+            }
+        }
+    }
+}
+
+// void populateGridWithWords(Grid* grid, Word words[], int word_count) {
+//     if (grid == NULL || words == NULL) return;
+
+//     for(int r = 0; r < grid->nrow; r++) {
+//         for(int c = 0; c < grid->ncol; c++) {
+//             grid->list_cells[r][c].current_letter = '\0'; // iniciando todas as celulas com caractere nulo
+//         }
+//     }
+
+//     // aqui estou iterando sobre cada palavra no banco
+//     for(int i = 0; i < word_count; i++) {
+//         Word* current_word = &words[i]; // banco de palavras
+//         int word_len = strlen(current_word->word);
+//         int start_row = current_word->i; // indice inicial da palavra
+//         int start_col = current_word->j; // indice final da palabra
+
+//         // aqui itero sobre cada LETRA da palabra
+//         for(int k = 0; k < word_len; k++) {
+
+//             // se a palavra foi definida como tendo orientação horizontal
+//             if (current_word->orientation == HORIZONTAL) {
+//                 start_col += k; // o indice i de aij eh incrimentado
+//             } else {
+//                 start_row += k; // se nao o j eh incrementado
+//             }
+
+//             // por fim verifico se a celula de destino esta dentro dos limites da grade
+//             if (start_row < grid->nrow && start_col < grid->ncol) {
+//                 grid->list_cells[start_row][start_col].current_letter = toupper(current_word->word[k]); // coloco em minuscula p/ evitar problemas
+//             }
+//         }
+//     }
+// }

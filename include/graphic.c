@@ -57,6 +57,7 @@ void drawGrid(Grid* grid, SDL_Renderer* renderer) {
             drawRect(cell->x, cell->y, cell->w, cell->h, renderer, rectBorderColor.r, rectBorderColor.g, rectBorderColor.b, rectBorderColor.a, "border");
             
            char current_letter = cell->current_letter;
+           if (current_letter == '\0') continue;
            if (current_letter >= 'A' && current_letter <= 'Z') {
                 int texture_index = current_letter - 'A';
                 SDL_Texture* letter_texture = grid->letter_textures_cache[texture_index];

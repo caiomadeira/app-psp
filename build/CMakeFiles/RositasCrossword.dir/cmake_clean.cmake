@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/RositasCrossword.dir/include/logic.c.obj.d"
   "CMakeFiles/RositasCrossword.dir/include/player.c.obj"
   "CMakeFiles/RositasCrossword.dir/include/player.c.obj.d"
+  "CMakeFiles/RositasCrossword.dir/include/words.c.obj"
+  "CMakeFiles/RositasCrossword.dir/include/words.c.obj.d"
   "CMakeFiles/RositasCrossword.dir/main.c.obj"
   "CMakeFiles/RositasCrossword.dir/main.c.obj.d"
   "RositasCrossword"

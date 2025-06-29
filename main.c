@@ -115,6 +115,16 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         return SDL_APP_FAILURE;
     }
 
+    // inicializa com as palavras
+    /*
+        Preciso usar delcarações externas pra acessar o banco.
+        TODO: INvestigar o porque
+    */
+    extern Word words[];
+    extern int words_count;
+
+    populateGridWithWords(a->grid, words, words_count);
+
     a->grid->font = TTF_OpenFont(GAME_OVER_TTFF, a->grid->font_size);
     if (a->grid->font == NULL) {
         printDebug(SDL_GetError(), 5000);

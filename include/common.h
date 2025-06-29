@@ -12,6 +12,10 @@
 #include <string.h>
 #include <math.h>
 #include <stdbool.h>
+#include <unistd.h> // Necessário para a função chdir()
+#include <string.h> // Necessário para a função strrchr()
+#include <ctype.h>
+
 // -------------------------
 // PSP
 #include <pspkernel.h>
@@ -22,8 +26,7 @@
 #include <pspctrl.h>
 #include<pspaudio.h>
 #include<pspaudiolib.h>
-#include <unistd.h> // Necessário para a função chdir()
-#include <string.h> // Necessário para a função strrchr()
+
 
 // REDEFINING FUNCTIONS NAME
 #define readButtonState sceCtrlReadBufferPositive

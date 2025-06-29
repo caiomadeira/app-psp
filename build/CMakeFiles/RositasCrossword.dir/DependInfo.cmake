@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/caiomadeira/Desktop/app-psp/include/graphic.c" "CMakeFiles/RositasCrossword.dir/include/graphic.c.obj" "gcc" "CMakeFiles/RositasCrossword.dir/include/graphic.c.obj.d"
   "/home/caiomadeira/Desktop/app-psp/include/logic.c" "CMakeFiles/RositasCrossword.dir/include/logic.c.obj" "gcc" "CMakeFiles/RositasCrossword.dir/include/logic.c.obj.d"
   "/home/caiomadeira/Desktop/app-psp/include/player.c" "CMakeFiles/RositasCrossword.dir/include/player.c.obj" "gcc" "CMakeFiles/RositasCrossword.dir/include/player.c.obj.d"
+  "/home/caiomadeira/Desktop/app-psp/include/words.c" "CMakeFiles/RositasCrossword.dir/include/words.c.obj" "gcc" "CMakeFiles/RositasCrossword.dir/include/words.c.obj.d"
   "/home/caiomadeira/Desktop/app-psp/main.c" "CMakeFiles/RositasCrossword.dir/main.c.obj" "gcc" "CMakeFiles/RositasCrossword.dir/main.c.obj.d"
   )
 

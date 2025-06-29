@@ -262,6 +262,30 @@ include/player.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/player.c.s
 .PHONY : include/player.c.s
 
+include/words.obj: include/words.c.obj
+.PHONY : include/words.obj
+
+# target to build an object file
+include/words.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/words.c.obj
+.PHONY : include/words.c.obj
+
+include/words.i: include/words.c.i
+.PHONY : include/words.i
+
+# target to preprocess a source file
+include/words.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/words.c.i
+.PHONY : include/words.c.i
+
+include/words.s: include/words.c.s
+.PHONY : include/words.s
+
+# target to generate assembly for a file
+include/words.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RositasCrossword.dir/build.make CMakeFiles/RositasCrossword.dir/include/words.c.s
+.PHONY : include/words.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -311,6 +335,9 @@ help:
 	@echo "... include/player.obj"
 	@echo "... include/player.i"
 	@echo "... include/player.s"
+	@echo "... include/words.obj"
+	@echo "... include/words.i"
+	@echo "... include/words.s"
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"

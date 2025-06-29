@@ -2,6 +2,7 @@
 #define LOGIC_H
 
 #include "common.h"
+#include "words.h"
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -42,6 +43,8 @@ typedef struct {
     int font_size;
     SDL_Color font_color;
     SDL_Texture* letter_textures_cache[26];
+    Word* words;
+    int total_words;
 } Grid;
 
 void print1d(char *v, int size);
@@ -52,5 +55,6 @@ GridArea* newGridArea(int x, int y, int w, int h, int padding);
 void moveGridSelection(Grid* grid, int d_row, int d_col);
 void moveCellLetterSelection(Grid* grid);
 char* init_letters(int start, int end);
+void populateGridWithWords(Grid* grid, Word words[], int word_count);
 
 #endif

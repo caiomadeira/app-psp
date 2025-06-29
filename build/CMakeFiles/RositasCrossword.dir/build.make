@@ -153,6 +153,20 @@ CMakeFiles/RositasCrossword.dir/include/logic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/RositasCrossword.dir/include/logic.c.s"
 	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caiomadeira/Desktop/app-psp/include/logic.c -o CMakeFiles/RositasCrossword.dir/include/logic.c.s
 
+CMakeFiles/RositasCrossword.dir/include/words.c.obj: CMakeFiles/RositasCrossword.dir/flags.make
+CMakeFiles/RositasCrossword.dir/include/words.c.obj: /home/caiomadeira/Desktop/app-psp/include/words.c
+CMakeFiles/RositasCrossword.dir/include/words.c.obj: CMakeFiles/RositasCrossword.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/RositasCrossword.dir/include/words.c.obj"
+	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/RositasCrossword.dir/include/words.c.obj -MF CMakeFiles/RositasCrossword.dir/include/words.c.obj.d -o CMakeFiles/RositasCrossword.dir/include/words.c.obj -c /home/caiomadeira/Desktop/app-psp/include/words.c
+
+CMakeFiles/RositasCrossword.dir/include/words.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/RositasCrossword.dir/include/words.c.i"
+	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/caiomadeira/Desktop/app-psp/include/words.c > CMakeFiles/RositasCrossword.dir/include/words.c.i
+
+CMakeFiles/RositasCrossword.dir/include/words.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/RositasCrossword.dir/include/words.c.s"
+	/home/caiomadeira/pspdev/bin/psp-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/caiomadeira/Desktop/app-psp/include/words.c -o CMakeFiles/RositasCrossword.dir/include/words.c.s
+
 # Object files for target RositasCrossword
 RositasCrossword_OBJECTS = \
 "CMakeFiles/RositasCrossword.dir/main.c.obj" \
@@ -160,7 +174,8 @@ RositasCrossword_OBJECTS = \
 "CMakeFiles/RositasCrossword.dir/include/player.c.obj" \
 "CMakeFiles/RositasCrossword.dir/include/audio.c.obj" \
 "CMakeFiles/RositasCrossword.dir/include/common.c.obj" \
-"CMakeFiles/RositasCrossword.dir/include/logic.c.obj"
+"CMakeFiles/RositasCrossword.dir/include/logic.c.obj" \
+"CMakeFiles/RositasCrossword.dir/include/words.c.obj"
 
 # External object files for target RositasCrossword
 RositasCrossword_EXTERNAL_OBJECTS =
@@ -171,9 +186,10 @@ RositasCrossword: CMakeFiles/RositasCrossword.dir/include/player.c.obj
 RositasCrossword: CMakeFiles/RositasCrossword.dir/include/audio.c.obj
 RositasCrossword: CMakeFiles/RositasCrossword.dir/include/common.c.obj
 RositasCrossword: CMakeFiles/RositasCrossword.dir/include/logic.c.obj
+RositasCrossword: CMakeFiles/RositasCrossword.dir/include/words.c.obj
 RositasCrossword: CMakeFiles/RositasCrossword.dir/build.make
 RositasCrossword: CMakeFiles/RositasCrossword.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable RositasCrossword"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/caiomadeira/Desktop/app-psp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable RositasCrossword"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RositasCrossword.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -E cmake_echo_color --cyan Not\ stripping\ binary\ for\ target\ RositasCrossword,\ build\ type\ is\ .
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Calling psp-fixup-imports for target RositasCrossword"
