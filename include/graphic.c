@@ -60,7 +60,24 @@ void drawHint(const char* text, float x, float y, float rectW, float rectH, TTF_
     drawRect(x + 5, y + 5, rectW - 10, rectH - 10, renderer, SDL_RECT_BORDER_COLOR.r, SDL_RECT_BORDER_COLOR.g, SDL_RECT_BORDER_COLOR.b, SDL_RECT_BORDER_COLOR.a, "border");
     
     int wrap_width = (int)rectW - 20;
-    drawWrappedText(text, x + 10, y + 10, font, SDL_RECT_BORDER_COLOR, renderer, wrap_width);
+    drawWrappedText(text, x + 10, y + 30, font, SDL_RECT_BORDER_COLOR, renderer, wrap_width);
+}
+
+void drawInfo(Player* player, float x, float y, float rectW, float rectH, TTF_Font* font, SDL_Renderer* renderer) {
+    if (font == NULL) return;
+    
+    SDL_Color SDL_RECT_COLOR = { 0, 0, 0, 255 };
+    SDL_Color SDL_RECT_BORDER_COLOR = { 255, 255, 255, 255 };
+
+    drawRect(x, y, rectW, rectH, renderer, SDL_RECT_COLOR.r, SDL_RECT_COLOR.g, SDL_RECT_COLOR.b, SDL_RECT_COLOR.a, "filled");
+    drawRect(x + 5, y + 5, rectW - 10, rectH - 10, renderer, SDL_RECT_BORDER_COLOR.r, SDL_RECT_BORDER_COLOR.g, SDL_RECT_BORDER_COLOR.b, SDL_RECT_BORDER_COLOR.a, "border");
+
+    int wrap_width = (int)rectW - 20;
+    drawWrappedText("X: select WORD or LETTER | O: Change orientation ", x + 10, y + 10, font, SDL_RECT_BORDER_COLOR, renderer, wrap_width);
+
+    char scoreText[64];
+    snprintf(scoreText, sizeof(scoreText), "Score: %d", player->score);
+    drawWrappedText(scoreText, x + 10, y + 10, font, SDL_RECT_BORDER_COLOR, renderer, wrap_width);
 }
 
 void drawWrappedText(const char *text, float x, float y, TTF_Font* font, SDL_Color fg, SDL_Renderer* renderer, int wrap_width_px) {
@@ -89,8 +106,13 @@ void drawGrid(Grid* grid, SDL_Renderer* renderer, SelectionMode selection_mode, 
 
     for(int i = 0; i < grid->nrow; i++) {
         for(int j = 0; j < grid->ncol; j++) {
-            SDL_Color rectBackgroundColor = { 255, 255, 255, 255 }; 
             Cell* cell = &grid->list_cells[i][j];
+            // define cell bg color
+            SDL_Color rectBackgroundColor;
+            
+            if (cell->current_letter == '\0') {
+                rectBackgroundColor = (SDL_Color) { 0, 0, 0, 255 };
+            } else { rectBackgroundColor = (SDL_Color) { 255, 255, 255, 255 }; }
             
             if (selection_mode == WORD_MODE && selected_word && selected_word->is_placed) {
                 if (findWordAt(i, j, words, words_count, selected_word->orientation) == selected_word) {
@@ -112,19 +134,19 @@ void drawGrid(Grid* grid, SDL_Renderer* renderer, SelectionMode selection_mode, 
             char current_letter = cell->current_letter;
             if (current_letter == '\0') continue;
             if (current_letter >= 'A' && current_letter <= 'Z') {
-                    int texture_index = current_letter - 'A';
-                    SDL_Texture* letter_texture = grid->letter_textures_cache[texture_index];
-                    if (letter_texture != NULL) {
-                        SDL_FRect dest_rect;
-                        dest_rect.x = cell->x;
-                        dest_rect.y = cell->y;
+                int texture_index = current_letter - 'A';
+                SDL_Texture* letter_texture = grid->letter_textures_cache[texture_index];
+                if (letter_texture != NULL) {
+                    SDL_FRect dest_rect;
+                    dest_rect.x = cell->x;
+                    dest_rect.y = cell->y;
 
-                        SDL_GetTextureSize(letter_texture, &dest_rect.w, &dest_rect.h); // antes era SDL_GetTextureSize
+                    SDL_GetTextureSize(letter_texture, &dest_rect.w, &dest_rect.h); // antes era SDL_GetTextureSize
 
-                        dest_rect.x = cell->x + (cell->w - dest_rect.w) / 2.0f;
-                        dest_rect.y = cell->y + (cell->h - dest_rect.h) / 2.0f;
-                        SDL_RenderTexture(renderer, letter_texture, NULL, &dest_rect);
-                    }
+                    dest_rect.x = cell->x + (cell->w - dest_rect.w) / 2.0f;
+                    dest_rect.y = cell->y + (cell->h - dest_rect.h) / 2.0f;
+                    SDL_RenderTexture(renderer, letter_texture, NULL, &dest_rect);
+                }
             }
         }
     }

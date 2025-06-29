@@ -4,12 +4,8 @@
 #include "common.h"
 
 typedef struct player {
-    float x;
-    float y;
-    float hp;
-    float speed;
-    int inventory_size;
-    int* inventory;
+    float score;
+    char name[40];
 } Player;
 
 Player* init_player(void);

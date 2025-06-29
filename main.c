@@ -196,6 +196,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         }
     }
 
+    updateCurrentHint(a); // evita o bug da hint nao aparecer ao iniciar
+
 	*appstate = (void *)a;
 	return SDL_APP_CONTINUE;
 }
@@ -210,7 +212,6 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     app_t *a = (app_t *)appstate;
     a->prev_pad = a->pad;
 
-    // --- LOGICA DE CONTROLES
     // --- LÓGICA DE CONTROLES ---
     readButtonState(&a->pad, 1);
     if (a->pad.Buttons & PSP_CTRL_START) return SDL_APP_SUCCESS;
@@ -218,7 +219,7 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     if (a->selection_mode == WORD_MODE) {
         // --- CONTROLES DO MODO PALAVRA ---
         int d_row = 0, d_col = 0;
-        if ((a->pad.Buttons & PSP_CTRL_UP) && !(a->prev_pad.Buttons & PSP_CTRL_UP)) d_row = -1;
+        if ((a->pad.Buttons & PSP_CTRL_UP) && !(a->prev_pad.Buttons & PSP_CTRL_UP))  d_row = -1;
         if ((a->pad.Buttons & PSP_CTRL_DOWN) && !(a->prev_pad.Buttons & PSP_CTRL_DOWN)) d_row = 1;
         if ((a->pad.Buttons & PSP_CTRL_LEFT) && !(a->prev_pad.Buttons & PSP_CTRL_LEFT)) d_col = -1;
         if ((a->pad.Buttons & PSP_CTRL_RIGHT) && !(a->prev_pad.Buttons & PSP_CTRL_RIGHT)) d_col = 1;
@@ -277,6 +278,9 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     float rectW = (WINDOW_WIDTH / 2) - 50;
     float rectH = (WINDOW_HEIGHT / 2 ) - 15;
     if (a->current_hint) drawHint(a->current_hint, x, y, rectW, rectH, a->hint_font, a->renderer);
+
+    y = WINDOW_HEIGHT / 2;
+    drawInfo(a->player, x, y, rectW, rectH, a->hint_font, a->renderer);
 
     SDL_RenderPresent(a->renderer); // Mostra na tela tudo o que foi desenhado    
     return SDL_APP_CONTINUE;
