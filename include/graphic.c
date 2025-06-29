@@ -41,6 +41,15 @@ int drawRect(float x, float y, float w, float h, SDL_Renderer *renderer, int r, 
     return 0;
 }
 
+void drawHint(const char* text, float x, float y, float rectW, float rectH, TTF_Font* font, SDL_Renderer* renderer) {
+    SDL_Color SDL_RECT_COLOR = { 0, 0, 0, 255 };
+    SDL_Color SDL_RECT_BORDER_COLOR = { 255, 255, 255, 255 };
+
+    drawRect(x, y, rectW, rectH, renderer, SDL_RECT_BORDER_COLOR.r, SDL_RECT_BORDER_COLOR.g, SDL_RECT_BORDER_COLOR.b, SDL_RECT_BORDER_COLOR.a, "border");
+    drawRect(x, y, rectW, rectH, renderer, SDL_RECT_COLOR.r, SDL_RECT_COLOR.g, SDL_RECT_COLOR.b, SDL_RECT_COLOR.a, "filled");
+    drawTextWithFont(text, x + 5, y + 10, font, renderer, SDL_RECT_BORDER_COLOR);
+}
+
 void drawGrid(Grid* grid, SDL_Renderer* renderer) {
     if (grid == NULL) return;
     SDL_Color rectBorderColor = { 0, 0, 0, 255 };

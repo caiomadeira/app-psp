@@ -35,9 +35,6 @@ Word* newWord(int index, char* hint, char* word) {
     w->orientation = 0;
     w->index = index;
     
-    w->start = 0;
-    w->end = 0;
-    
     return w;
 }
 
@@ -46,4 +43,27 @@ void destroyWord(Word* w) {
     free(w->hint);
     free(w->word);
     free(w);
+}
+
+// encontra a word que contem a celula c/ uma orientação específica e  retorna um ponteiro p/ word
+Word* findWordAt(int r, int c, Word words[], int word_count, WordOrientation orientation) {
+    for(int i = 0; i < word_count; i++) {
+        Word* current_word = &words[i];
+
+        // checa se a word foi colocada na grade e tem orientação que queremos
+        if (current_word->is_placed && current_word->orientation == orientation) {
+            int len = strlen(current_word->word);
+            if (orientation == HORIZONTAL) {
+                // aqui checo se a cell (r,c)) ta dentro dos limites dessa palavra
+                if (r == current_word->pos_final_i && c >= current_word->pos_final_j && c < current_word->pos_final_j + len) {
+                    return current_word; // achou a palavra
+                }
+            } else { // orientação vertical
+                if (c == current_word->pos_final_j && r >= current_word->pos_final_i && r < current_word->pos_final_i + len) {
+                    return current_word;
+                }
+            }
+        }
+    }
+    return NULL; // nenhuma palavra encontrada nessa posição/orientação
 }

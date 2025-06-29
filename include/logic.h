@@ -17,8 +17,8 @@
 #define END_LETTER 'Z'
 
 typedef struct {
-    float x;
-    float y;
+    float x; // i
+    float y; // j
     float w;
     float h;
     char current_letter;

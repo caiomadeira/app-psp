@@ -18,9 +18,42 @@ typedef struct app {
     SDL_Texture *background_texture;
     SDL_Renderer *renderer;
     TTF_Font *font;
+    TTF_Font *hint_font;
     SceCtrlData prev_pad;
     Grid* grid;
+    const char* current_hint;
+    WordOrientation current_orientation;
 } app_t;
+
+// inicializa com as palavras
+/*
+    Preciso usar delcarações externas pra acessar o banco.
+    TODO: INvestigar o porque
+*/
+extern Word words[];
+extern int words_count;
+
+void updateCurrentHint(app_t* a) {
+    if (!a || !a->grid) return;
+
+    int r = a->grid->ai;
+    int c = a->grid->aj;
+
+    if (a->grid->list_cells[r][c].current_letter == '\0') {
+        a->current_hint = NULL;
+        return;
+    }
+
+    Word* preferred_word = findWordAt(r, c, words, words_count, a->current_orientation);
+    Word* alternative_word = findWordAt(r, c, words, words_count, (a->current_orientation == HORIZONTAL) ? VERTICAL : HORIZONTAL);
+    if (preferred_word) {
+        a->current_hint = preferred_word->hint;
+    } else if (alternative_word) {
+        a->current_hint = alternative_word->hint;
+    } else {
+        a->current_hint = NULL;
+    }
+}
 
 /*
  *:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -76,6 +109,12 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         return SDL_APP_FAILURE;
     }
 
+    a->hint_font = TTF_OpenFont(GAME_OVER_TTFF, 40);
+    if (a->hint_font == NULL) {
+        printDebug(SDL_GetError(), 5000);
+        return SDL_APP_FAILURE;
+    }
+
     // Inicializando o controle nativo
     sceCtrlSetSamplingCycle(0);
     sceCtrlSetSamplingMode(PSP_CTRL_MODE_ANALOG);
@@ -102,12 +141,21 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         printDebug(SDL_GetError(), 5000);
         return SDL_APP_FAILURE;
     }
-
-    int grid_width = WINDOW_WIDTH / 2;
-    int grid_height = WINDOW_HEIGHT - 15;
-    int grid_pos_x = (WINDOW_WIDTH - grid_width) / 2;
-    int grid_pos_y = (WINDOW_HEIGHT - grid_height) / 2;
-    int padding = 2;
+    #define CENTRALIZED false
+    int grid_width, grid_height, grid_pos_x, grid_pos_y, padding = 0;
+    if (CENTRALIZED) {
+        grid_width = WINDOW_WIDTH / 2;
+        grid_height = WINDOW_HEIGHT - 15;
+        grid_pos_x = (WINDOW_WIDTH - grid_width) / 2;
+        grid_pos_y = (WINDOW_HEIGHT - grid_height) / 2;
+        padding = 2;
+    } else {
+        grid_width = WINDOW_WIDTH / 2;
+        grid_height = WINDOW_HEIGHT - 15;
+        grid_pos_x = 10;
+        grid_pos_y = 10;
+        padding = 2;
+    }
     GridArea* gridArea = newGridArea(grid_pos_x, grid_pos_y, grid_width, grid_height, padding);
     a->grid = newGrid(10, 10, gridArea);
     if (a->grid == NULL) {
@@ -115,13 +163,6 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv)
         return SDL_APP_FAILURE;
     }
 
-    // inicializa com as palavras
-    /*
-        Preciso usar delcarações externas pra acessar o banco.
-        TODO: INvestigar o porque
-    */
-    extern Word words[];
-    extern int words_count;
 
     populateGridWithWords(a->grid, words, words_count);
 
@@ -157,10 +198,13 @@ SDL_AppResult SDL_AppIterate(void *appstate)
 {
     app_t *a = (app_t *)appstate;
     a->prev_pad = a->pad;
+
     // --- LOGICA DE CONTROLES
     readButtonState(&a->pad, 1);
     if (a->pad.Buttons & PSP_CTRL_START)  return SDL_APP_SUCCESS;    // Se o botão START for pressionado, fecha o aplicativo
-    
+
+    // --- ATUALIZAÇÃO DE ESTADO ---
+    updateCurrentHint(a);
     // ----------------------------------------------------
     // --- LÓGICA DE RENDERIZAÇÃO ---
 
@@ -178,32 +222,23 @@ SDL_AppResult SDL_AppIterate(void *appstate)
     // Draw debug
     //drawTextWithFont("font: ", 0, 0, a->font, a->renderer, (SDL_Color){ 0, 0, 0, 255});
 
-    if ((a->pad.Buttons & PSP_CTRL_CROSS) && !(a->prev_pad.Buttons & PSP_CTRL_CROSS)) {
-        moveCellLetterSelection(a->grid);
-        //updateCellLetterDraw(a->grid, a->renderer);
-        //drawTextWithFont("font: ", 0, 0, a->font, a->renderer, (SDL_Color){ 0, 0, 0, 255});
-    }
+    // Draw Hint
+    float x = (WINDOW_WIDTH / 2) + 20;
+    float y = 10;
+    float rectW = (WINDOW_WIDTH / 2) - 50;
+    float rectH = WINDOW_HEIGHT - 15;
+    if (a->current_hint) drawHint(a->current_hint, x, y, rectW, rectH, a->hint_font, a->renderer);
 
+    // cross -> select letter
+    if ((a->pad.Buttons & PSP_CTRL_CROSS) && !(a->prev_pad.Buttons & PSP_CTRL_CROSS)) moveCellLetterSelection(a->grid);
     // cima
-    if ((a->pad.Buttons & PSP_CTRL_UP) && !(a->prev_pad.Buttons & PSP_CTRL_UP)) {
-        moveGridSelection(a->grid, -1, 0);
-    }
+    if ((a->pad.Buttons & PSP_CTRL_UP) && !(a->prev_pad.Buttons & PSP_CTRL_UP)) moveGridSelection(a->grid, -1, 0);
     // baixo
-    if ((a->pad.Buttons & PSP_CTRL_DOWN) && !(a->prev_pad.Buttons & PSP_CTRL_DOWN)) {
-        moveGridSelection(a->grid, 1, 0);
-    }
+    if ((a->pad.Buttons & PSP_CTRL_DOWN) && !(a->prev_pad.Buttons & PSP_CTRL_DOWN)) moveGridSelection(a->grid, 1, 0);
     // direita
-    if ((a->pad.Buttons & PSP_CTRL_RIGHT) && !(a->prev_pad.Buttons & PSP_CTRL_RIGHT)) {
-        moveGridSelection(a->grid, 0, 1);
-    }
+    if ((a->pad.Buttons & PSP_CTRL_RIGHT) && !(a->prev_pad.Buttons & PSP_CTRL_RIGHT)) moveGridSelection(a->grid, 0, 1);
     // esquerda
-    if ((a->pad.Buttons & PSP_CTRL_LEFT) && !(a->prev_pad.Buttons & PSP_CTRL_LEFT)) {
-        moveGridSelection(a->grid, 0, -1);
-    }
-
-    if ((a->pad.Buttons & PSP_CTRL_LEFT) && !(a->prev_pad.Buttons & PSP_CTRL_LEFT)) {
-        moveGridSelection(a->grid, 0, -1);
-    }
+    if ((a->pad.Buttons & PSP_CTRL_LEFT) && !(a->prev_pad.Buttons & PSP_CTRL_LEFT)) moveGridSelection(a->grid, 0, -1);
 
     SDL_RenderPresent(a->renderer); // Mostra na tela tudo o que foi desenhado    
     return SDL_APP_CONTINUE;
@@ -231,6 +266,9 @@ void SDL_AppQuit(void *appstate, SDL_AppResult result)
             SDL_DestroyTexture(a->grid->letter_textures_cache[i]);
         }
     }
+
+    TTF_CloseFont(a->font);
+    TTF_CloseFont(a->hint_font);
 
 	SDL_DestroyWindow(a->window);
     cleanup_native_audio();

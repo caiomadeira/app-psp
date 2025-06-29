@@ -14,11 +14,15 @@ typedef struct {
     char* word;
     int word_size;
     int hint_size;
-    int start; 
-    int end;
+    // int start; 
+    //int end;
+    bool is_placed;
+    int pos_final_i;
+    int pos_final_j;
     WordOrientation orientation;
 } Word;
 
+Word* findWordAt(int r, int c, Word words[], int word_count, WordOrientation orientation);
 Word* newWord(int index, char* hint, char* word);
 void destroyWord(Word* w);
 

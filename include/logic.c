@@ -223,6 +223,13 @@ bool placeWord(Grid* grid, Word* selected_word) {
                                     grid->list_cells[start_row + w][start_col].current_letter = toupper(selected_word->word[w]);
                                 }
                             }
+
+                            // Salva o estado da palavra
+                            selected_word->is_placed = true;
+                            selected_word->pos_final_i = start_row;
+                            selected_word->pos_final_j = start_col;
+                            selected_word->orientation = orientation;
+
                             return true; // confirma que a palavra foi posta
                         }
 
@@ -241,6 +248,7 @@ void populateGridWithWords(Grid* grid, Word words[], int word_count) {
     if (grid == NULL || words == NULL || word_count == 0) return ;
 
     srand(time(NULL)); // a semente chamo apenas uma vez como de costume
+
     for(int i = 0; i < grid->nrow; i++) {
         for (int j = 0; j < grid->ncol; j++) {
             grid->list_cells[i][j].current_letter = '\0'; // limpando a grade/iniciando as cells c caractere nulo
@@ -248,13 +256,18 @@ void populateGridWithWords(Grid* grid, Word words[], int word_count) {
     }
 
     // coloco a primeira palavra como ancora no centro da grade
-    const char* first = words[0].word;
-    int len = strlen(first);
+    Word* first = &words[0];
+    int len = strlen(first->word);
     int start_row = (grid->nrow / 2);
     int start_col = (grid->ncol - len) / 2; // centralizando horizontalmente
 
+    first->is_placed = true;
+    first->pos_final_i = start_row;
+    first->pos_final_j = start_col;
+    first->orientation = HORIZONTAL;
+
     for(int i = 0; i < len; i++) {
-        grid->list_cells[start_row][start_col + i].current_letter = toupper(first[i]);
+        grid->list_cells[start_row][start_col + i].current_letter = toupper(first->word[i]);
     }
 
     for (int i = 1; i < word_count; i++) {
