@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(RositasCrossword)
+project(RositaCrossword)
 
 add_executable(${PROJECT_NAME} 
     main.c
@@ -98,8 +98,8 @@ endif()
 if(PSP)
 	create_pbp_file(
 		TARGET ${PROJECT_NAME}
-		ICON_PATH NULL
-		BACKGROUND_PATH NULL
+		ICON_PATH "img/ICON0.png"
+		BACKGROUND_PATH "img/PIC1.png"
 		PREVIEW_PATH NULL
 		TITLE "${PROJECT_NAME}"
 	)
